@@ -1,0 +1,693 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+                              /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj (__udivdi3)
+/usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                              /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj (__umoddi3)
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/gdt.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/idt.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/io.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/isr.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
+                0x00100000                        phys = 0x100000
+                0x00100000                        . = phys
+
+.entry          0x00100000      0x149
+                0x00100000                        __entry_start = .
+ *(.entry)
+ .entry         0x00100000      0x149 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+                0x00100000                start
+
+.text           0x00100150     0x3bb6
+                0x00100150                        __text_start = .
+ *(.text)
+ .text          0x00100150       0x25 /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/gdt.obj
+                0x00100150                i686_GDT_Load
+ *fill*         0x00100175        0xb 
+ .text          0x00100180        0xd /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/idt.obj
+                0x00100180                i686_IDT_Load
+ *fill*         0x0010018d        0x3 
+ .text          0x00100190       0x1d /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/io.obj
+                0x00100190                i686_outb
+                0x0010019b                i686_inb
+                0x001001a4                i686_Panic
+                0x001001a6                i686_EnableInterrupts
+                0x001001a8                i686_DisableInterrupts
+                0x001001aa                crash_me
+ *fill*         0x001001ad        0x3 
+ .text          0x001001b0      0xa6d /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/isr.obj
+                0x001001b0                i686_ISR0
+                0x001001b9                i686_ISR1
+                0x001001c2                i686_ISR2
+                0x001001cb                i686_ISR3
+                0x001001d4                i686_ISR4
+                0x001001dd                i686_ISR5
+                0x001001e6                i686_ISR6
+                0x001001ef                i686_ISR7
+                0x001001f8                i686_ISR8
+                0x001001ff                i686_ISR9
+                0x00100208                i686_ISR10
+                0x0010020f                i686_ISR11
+                0x00100216                i686_ISR12
+                0x0010021d                i686_ISR13
+                0x00100224                i686_ISR14
+                0x0010022b                i686_ISR15
+                0x00100234                i686_ISR16
+                0x0010023d                i686_ISR17
+                0x00100244                i686_ISR18
+                0x0010024d                i686_ISR19
+                0x00100256                i686_ISR20
+                0x0010025f                i686_ISR21
+                0x00100266                i686_ISR22
+                0x0010026f                i686_ISR23
+                0x00100278                i686_ISR24
+                0x00100281                i686_ISR25
+                0x0010028a                i686_ISR26
+                0x00100293                i686_ISR27
+                0x0010029c                i686_ISR28
+                0x001002a5                i686_ISR29
+                0x001002ae                i686_ISR30
+                0x001002b7                i686_ISR31
+                0x001002c0                i686_ISR32
+                0x001002c9                i686_ISR33
+                0x001002d2                i686_ISR34
+                0x001002db                i686_ISR35
+                0x001002e4                i686_ISR36
+                0x001002ed                i686_ISR37
+                0x001002f6                i686_ISR38
+                0x001002ff                i686_ISR39
+                0x00100308                i686_ISR40
+                0x00100311                i686_ISR41
+                0x0010031a                i686_ISR42
+                0x00100323                i686_ISR43
+                0x0010032c                i686_ISR44
+                0x00100335                i686_ISR45
+                0x0010033e                i686_ISR46
+                0x00100347                i686_ISR47
+                0x00100350                i686_ISR48
+                0x00100359                i686_ISR49
+                0x00100362                i686_ISR50
+                0x0010036b                i686_ISR51
+                0x00100374                i686_ISR52
+                0x0010037d                i686_ISR53
+                0x00100386                i686_ISR54
+                0x0010038f                i686_ISR55
+                0x00100398                i686_ISR56
+                0x001003a1                i686_ISR57
+                0x001003aa                i686_ISR58
+                0x001003b3                i686_ISR59
+                0x001003bc                i686_ISR60
+                0x001003c5                i686_ISR61
+                0x001003ce                i686_ISR62
+                0x001003d7                i686_ISR63
+                0x001003e0                i686_ISR64
+                0x001003e9                i686_ISR65
+                0x001003f2                i686_ISR66
+                0x001003fb                i686_ISR67
+                0x00100404                i686_ISR68
+                0x0010040d                i686_ISR69
+                0x00100416                i686_ISR70
+                0x0010041f                i686_ISR71
+                0x00100428                i686_ISR72
+                0x00100431                i686_ISR73
+                0x0010043a                i686_ISR74
+                0x00100443                i686_ISR75
+                0x0010044c                i686_ISR76
+                0x00100455                i686_ISR77
+                0x0010045e                i686_ISR78
+                0x00100467                i686_ISR79
+                0x00100470                i686_ISR80
+                0x00100479                i686_ISR81
+                0x00100482                i686_ISR82
+                0x0010048b                i686_ISR83
+                0x00100494                i686_ISR84
+                0x0010049d                i686_ISR85
+                0x001004a6                i686_ISR86
+                0x001004af                i686_ISR87
+                0x001004b8                i686_ISR88
+                0x001004c1                i686_ISR89
+                0x001004ca                i686_ISR90
+                0x001004d3                i686_ISR91
+                0x001004dc                i686_ISR92
+                0x001004e5                i686_ISR93
+                0x001004ee                i686_ISR94
+                0x001004f7                i686_ISR95
+                0x00100500                i686_ISR96
+                0x00100509                i686_ISR97
+                0x00100512                i686_ISR98
+                0x0010051b                i686_ISR99
+                0x00100524                i686_ISR100
+                0x0010052d                i686_ISR101
+                0x00100536                i686_ISR102
+                0x0010053f                i686_ISR103
+                0x00100548                i686_ISR104
+                0x00100551                i686_ISR105
+                0x0010055a                i686_ISR106
+                0x00100563                i686_ISR107
+                0x0010056c                i686_ISR108
+                0x00100575                i686_ISR109
+                0x0010057e                i686_ISR110
+                0x00100587                i686_ISR111
+                0x00100590                i686_ISR112
+                0x00100599                i686_ISR113
+                0x001005a2                i686_ISR114
+                0x001005ab                i686_ISR115
+                0x001005b4                i686_ISR116
+                0x001005bd                i686_ISR117
+                0x001005c6                i686_ISR118
+                0x001005cf                i686_ISR119
+                0x001005d8                i686_ISR120
+                0x001005e1                i686_ISR121
+                0x001005ea                i686_ISR122
+                0x001005f3                i686_ISR123
+                0x001005fc                i686_ISR124
+                0x00100605                i686_ISR125
+                0x0010060e                i686_ISR126
+                0x00100617                i686_ISR127
+                0x00100620                i686_ISR128
+                0x0010062c                i686_ISR129
+                0x00100638                i686_ISR130
+                0x00100644                i686_ISR131
+                0x00100650                i686_ISR132
+                0x0010065c                i686_ISR133
+                0x00100668                i686_ISR134
+                0x00100674                i686_ISR135
+                0x00100680                i686_ISR136
+                0x0010068c                i686_ISR137
+                0x00100698                i686_ISR138
+                0x001006a4                i686_ISR139
+                0x001006b0                i686_ISR140
+                0x001006bc                i686_ISR141
+                0x001006c8                i686_ISR142
+                0x001006d4                i686_ISR143
+                0x001006e0                i686_ISR144
+                0x001006ec                i686_ISR145
+                0x001006f8                i686_ISR146
+                0x00100704                i686_ISR147
+                0x00100710                i686_ISR148
+                0x0010071c                i686_ISR149
+                0x00100728                i686_ISR150
+                0x00100734                i686_ISR151
+                0x00100740                i686_ISR152
+                0x0010074c                i686_ISR153
+                0x00100758                i686_ISR154
+                0x00100764                i686_ISR155
+                0x00100770                i686_ISR156
+                0x0010077c                i686_ISR157
+                0x00100788                i686_ISR158
+                0x00100794                i686_ISR159
+                0x001007a0                i686_ISR160
+                0x001007ac                i686_ISR161
+                0x001007b8                i686_ISR162
+                0x001007c4                i686_ISR163
+                0x001007d0                i686_ISR164
+                0x001007dc                i686_ISR165
+                0x001007e8                i686_ISR166
+                0x001007f4                i686_ISR167
+                0x00100800                i686_ISR168
+                0x0010080c                i686_ISR169
+                0x00100818                i686_ISR170
+                0x00100824                i686_ISR171
+                0x00100830                i686_ISR172
+                0x0010083c                i686_ISR173
+                0x00100848                i686_ISR174
+                0x00100854                i686_ISR175
+                0x00100860                i686_ISR176
+                0x0010086c                i686_ISR177
+                0x00100878                i686_ISR178
+                0x00100884                i686_ISR179
+                0x00100890                i686_ISR180
+                0x0010089c                i686_ISR181
+                0x001008a8                i686_ISR182
+                0x001008b4                i686_ISR183
+                0x001008c0                i686_ISR184
+                0x001008cc                i686_ISR185
+                0x001008d8                i686_ISR186
+                0x001008e4                i686_ISR187
+                0x001008f0                i686_ISR188
+                0x001008fc                i686_ISR189
+                0x00100908                i686_ISR190
+                0x00100914                i686_ISR191
+                0x00100920                i686_ISR192
+                0x0010092c                i686_ISR193
+                0x00100938                i686_ISR194
+                0x00100944                i686_ISR195
+                0x00100950                i686_ISR196
+                0x0010095c                i686_ISR197
+                0x00100968                i686_ISR198
+                0x00100974                i686_ISR199
+                0x00100980                i686_ISR200
+                0x0010098c                i686_ISR201
+                0x00100998                i686_ISR202
+                0x001009a4                i686_ISR203
+                0x001009b0                i686_ISR204
+                0x001009bc                i686_ISR205
+                0x001009c8                i686_ISR206
+                0x001009d4                i686_ISR207
+                0x001009e0                i686_ISR208
+                0x001009ec                i686_ISR209
+                0x001009f8                i686_ISR210
+                0x00100a04                i686_ISR211
+                0x00100a10                i686_ISR212
+                0x00100a1c                i686_ISR213
+                0x00100a28                i686_ISR214
+                0x00100a34                i686_ISR215
+                0x00100a40                i686_ISR216
+                0x00100a4c                i686_ISR217
+                0x00100a58                i686_ISR218
+                0x00100a64                i686_ISR219
+                0x00100a70                i686_ISR220
+                0x00100a7c                i686_ISR221
+                0x00100a88                i686_ISR222
+                0x00100a94                i686_ISR223
+                0x00100aa0                i686_ISR224
+                0x00100aac                i686_ISR225
+                0x00100ab8                i686_ISR226
+                0x00100ac4                i686_ISR227
+                0x00100ad0                i686_ISR228
+                0x00100adc                i686_ISR229
+                0x00100ae8                i686_ISR230
+                0x00100af4                i686_ISR231
+                0x00100b00                i686_ISR232
+                0x00100b0c                i686_ISR233
+                0x00100b18                i686_ISR234
+                0x00100b24                i686_ISR235
+                0x00100b30                i686_ISR236
+                0x00100b3c                i686_ISR237
+                0x00100b48                i686_ISR238
+                0x00100b54                i686_ISR239
+                0x00100b60                i686_ISR240
+                0x00100b6c                i686_ISR241
+                0x00100b75                i686_ISR242
+                0x00100b7e                i686_ISR243
+                0x00100b87                i686_ISR244
+                0x00100b90                i686_ISR245
+                0x00100b99                i686_ISR246
+                0x00100ba2                i686_ISR247
+                0x00100bab                i686_ISR248
+                0x00100bb4                i686_ISR249
+                0x00100bbd                i686_ISR250
+                0x00100bc6                i686_ISR251
+                0x00100bcf                i686_ISR252
+                0x00100bd8                i686_ISR253
+                0x00100be1                i686_ISR254
+                0x00100bea                i686_ISR255
+ .text          0x00100c1d       0x19 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+                0x00100c1d                timer
+ .text          0x00100c36       0xf5 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+                0x00100c36                memcpy
+                0x00100c88                memset
+                0x00100ccb                memcmp
+ .text          0x00100d2b       0x82 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+                0x00100d2b                pit_handler
+                0x00100d3e                pit_get_ticks
+                0x00100d48                pit_init
+ .text          0x00100dad      0x199 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+                0x00100e46                shell_execute
+ .text          0x00100f46      0x915 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+                0x00100f46                putchr
+                0x00100f75                putcolor
+                0x00100fa7                getchr
+                0x00100fc9                getcolor
+                0x00100fee                setcursor
+                0x0010105f                clrscr
+                0x001010ed                scrollback
+                0x001011db                putc
+                0x001012eb                puts
+                0x0010131a                printf_unsigned
+                0x001013be                printf_signed
+                0x0010141b                printf
+                0x001017c2                print_buffer
+ .text          0x0010185b       0xe2 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+                0x0010185b                strcmp
+                0x0010189a                strlen
+                0x001018c1                strncmp
+ .text          0x0010193d      0x411 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+                0x0010193d                text_set_color
+                0x00101ab5                text_clear
+                0x00101b0d                text_putc
+                0x00101c19                text_print
+ .text          0x00101d4e       0x2f /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+                0x00101d4e                sleep
+                0x00101d70                get_ticks
+ .text          0x00101d7d       0x47 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+                0x00101d7d                vga_putpixel
+ .text          0x00101dc4       0x32 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+                0x00101dc4                HAL_Initialize
+ .text          0x00101df6       0x1d /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+                0x00101df6                i686_GDT_Initialize
+ .text          0x00101e13       0xba /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+                0x00101e13                i686_IDT_SetGate
+                0x00101e74                i686_IDT_EnableGate
+                0x00101e94                i686_IDT_DisableGate
+                0x00101eb4                i686_IDT_Initialize
+ .text          0x00101ecd       0x1b /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+                0x00101ecd                i686_iowait
+ .text          0x00101ee8       0xb0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+                0x00101ee8                i686_IRQ_Handler
+                0x00101f3e                i686_IRQ_Initialize
+                0x00101f85                i686_IRQ_RegisterHandler
+ .text          0x00101f98      0x1a1 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+                0x00101f98                i686_ISR_Initialize
+                0x00101fda                i686_ISR_Handler
+                0x00102115                i686_ISR_RegisterHandler
+ .text          0x00102139     0x1489 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+                0x00102139                i686_ISR_InitializeGates
+ .text          0x001035c2      0x233 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+                0x00103621                keyboard_handler
+                0x001037da                keyboard_init
+ .text          0x001037f5      0x2b6 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+                0x001037f5                i686_PIC_Configure
+                0x001038e7                i686_PIC_SendEndOfInterrupt
+                0x00103917                i686_PIC_Disable
+                0x00103951                i686_PIC_Mask
+                0x001039a5                i686_PIC_Unmask
+                0x001039fb                i686_PIC_ReadIrqRequestRegister
+                0x00103a53                i686_PIC_ReadInServiceRegister
+ *fill*         0x00103aab        0x5 
+ .text          0x00103ab0      0x11a /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+                0x00103ab0                __udivdi3
+ *fill*         0x00103bca        0x6 
+ .text          0x00103bd0      0x136 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                0x00103bd0                __umoddi3
+
+.data           0x00103d08       0x2e
+                0x00103d08                        __data_start = .
+ *(.data)
+ .data          0x00103d08        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .data          0x00103d08        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .data          0x00103d08        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .data          0x00103d08        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .data          0x00103d08        0x4 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+                0x00103d08                g_ScreenBuffer
+ .data          0x00103d0c        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .data          0x00103d0c        0x1 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .data          0x00103d0d        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .data          0x00103d0d        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .data          0x00103d0d        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ *fill*         0x00103d0d        0x3 
+ .data          0x00103d10       0x1e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+                0x00103d10                g_GDT
+                0x00103d28                g_GDTDescriptor
+ *fill*         0x00103d2e        0x2 
+ .data          0x00103d30        0x6 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+                0x00103d30                g_IDTDescriptor
+ .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+ .data          0x00103d36        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .data          0x00103d36        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+
+.rodata         0x00103d40      0x86d
+                0x00103d40                        __rodata_start = .
+ *(.rodata)
+ .rodata        0x00103d40      0x32a /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ *fill*         0x0010406a        0x2 
+ .rodata        0x0010406c       0x51 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ *fill*         0x001040bd        0x3 
+ .rodata        0x001040c0       0x1f /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+                0x001040c0                SCREEN_WIDTH
+                0x001040c4                SCREEN_HEIGHT
+                0x001040c8                DEFAULT_COLOR
+                0x001040cc                g_HexChars
+ *fill*         0x001040df        0x1 
+ .rodata        0x001040e0        0x4 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .rodata        0x001040e4        0x4 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ *fill*         0x001040e8       0x18 
+ .rodata        0x00104100      0x34f /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ *fill*         0x0010444f       0x11 
+ .rodata        0x00104460      0x14d /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+
+.eh_frame       0x001045b0       0xd8
+ .eh_frame      0x001045b0       0x64 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .eh_frame      0x00104614       0x74 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+
+.bss            0x001046a0      0xd74
+                0x001046a0                        __bss_start = .
+ *(.bss)
+ .bss           0x001046a0        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .bss           0x001046a0        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .bss           0x001046a0        0x4 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .bss           0x001046a4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .bss           0x001046a4        0x8 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+                0x001046a4                g_ScreenX
+                0x001046a8                g_ScreenY
+ .bss           0x001046ac        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .bss           0x001046ac        0x8 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .bss           0x001046b4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .bss           0x001046b4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .bss           0x001046b4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .bss           0x001046b4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ *fill*         0x001046b4        0xc 
+ .bss           0x001046c0      0x800 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+                0x001046c0                g_IDT
+ .bss           0x00104ec0        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .bss           0x00104ec0       0x40 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+                0x00104ec0                g_IRQHandlers
+ .bss           0x00104f00      0x400 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+                0x00104f00                g_ISRHandlers
+ .bss           0x00105300        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .bss           0x00105300      0x108 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .bss           0x00105408        0xc /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+                0x00105408                PIC_ICW1
+                0x0010540c                PIC_ICW4
+                0x00105410                PIC_CMD
+ .bss           0x00105414        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .bss           0x00105414        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                0x00105414                        __end = .
+OUTPUT(/home/lsys/Scripts/OSDEV3/build/kernel.bin binary)
+
+.debug_info     0x00000000     0x30db
+ .debug_info    0x00000000      0x23d /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .debug_info    0x0000023d      0x1e8 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .debug_info    0x00000425      0x233 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .debug_info    0x00000658      0x1dd /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .debug_info    0x00000835      0x54c /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+ .debug_info    0x00000d81      0x111 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .debug_info    0x00000e92      0x287 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .debug_info    0x00001119       0xd1 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .debug_info    0x000011ea       0xce /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .debug_info    0x000012b8       0xde /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .debug_info    0x00001396      0x1fa /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ .debug_info    0x00001590      0x24e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+ .debug_info    0x000017de       0xac /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .debug_info    0x0000188a      0x2d0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .debug_info    0x00001b5a      0x29c /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .debug_info    0x00001df6      0xd09 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_info    0x00002aff      0x375 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .debug_info    0x00002e74      0x267 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+
+.debug_abbrev   0x00000000     0x132e
+ .debug_abbrev  0x00000000      0x13c /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .debug_abbrev  0x0000013c       0xe2 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .debug_abbrev  0x0000021e      0x113 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .debug_abbrev  0x00000331      0x175 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .debug_abbrev  0x000004a6      0x1f6 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+ .debug_abbrev  0x0000069c       0xb0 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .debug_abbrev  0x0000074c      0x14d /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .debug_abbrev  0x00000899       0xa7 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .debug_abbrev  0x00000940       0x97 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .debug_abbrev  0x000009d7       0x85 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .debug_abbrev  0x00000a5c       0xf0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ .debug_abbrev  0x00000b4c      0x122 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+ .debug_abbrev  0x00000c6e       0x6d /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .debug_abbrev  0x00000cdb      0x179 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .debug_abbrev  0x00000e54      0x150 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .debug_abbrev  0x00000fa4       0xbf /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_abbrev  0x00001063      0x171 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .debug_abbrev  0x000011d4      0x15a /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+
+.debug_aranges  0x00000000      0x248
+ .debug_aranges
+                0x00000000       0x28 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .debug_aranges
+                0x00000028       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .debug_aranges
+                0x00000048       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .debug_aranges
+                0x00000068       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .debug_aranges
+                0x00000088       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+ .debug_aranges
+                0x000000a8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .debug_aranges
+                0x000000c8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .debug_aranges
+                0x000000e8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .debug_aranges
+                0x00000108       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .debug_aranges
+                0x00000128       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .debug_aranges
+                0x00000148       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ .debug_aranges
+                0x00000168       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+ .debug_aranges
+                0x00000188       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .debug_aranges
+                0x000001a8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .debug_aranges
+                0x000001c8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .debug_aranges
+                0x000001e8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_aranges
+                0x00000208       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .debug_aranges
+                0x00000228       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+
+.debug_rnglists
+                0x00000000       0x1a
+ .debug_rnglists
+                0x00000000       0x1a /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+
+.debug_line     0x00000000     0x1303
+ .debug_line    0x00000000       0xa3 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .debug_line    0x000000a3       0xcc /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .debug_line    0x0000016f       0x8c /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .debug_line    0x000001fb      0x129 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .debug_line    0x00000324      0x3b1 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+ .debug_line    0x000006d5       0xe6 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .debug_line    0x000007bb      0x258 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .debug_line    0x00000a13       0x77 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .debug_line    0x00000a8a       0x77 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .debug_line    0x00000b01       0x85 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .debug_line    0x00000b86       0x5c /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ .debug_line    0x00000be2       0x89 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+ .debug_line    0x00000c6b       0x5e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .debug_line    0x00000cc9       0xc0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .debug_line    0x00000d89       0xd8 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .debug_line    0x00000e61      0x25f /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_line    0x000010c0      0x134 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .debug_line    0x000011f4      0x10f /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+
+.debug_str      0x00000000     0x29ef
+ .debug_str     0x00000000      0x177 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .debug_str     0x00000177      0x125 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .debug_str     0x0000029c      0x180 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .debug_str     0x0000041c      0x183 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .debug_str     0x0000059f      0x24f /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+ .debug_str     0x000007ee       0x88 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .debug_str     0x00000876      0x15c /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .debug_str     0x000009d2       0xfc /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .debug_str     0x00000ace       0xea /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .debug_str     0x00000bb8      0x14e /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .debug_str     0x00000d06      0x2fa /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ .debug_str     0x00001000      0x291 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+ .debug_str     0x00001291       0xf6 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .debug_str     0x00001387      0x22e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .debug_str     0x000015b5      0x1cb /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .debug_str     0x00001780      0xd5e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_str     0x000024de      0x23e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .debug_str     0x0000271c      0x2d3 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+
+.debug_line_str
+                0x00000000      0xc15
+ .debug_line_str
+                0x00000000       0xc7 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .debug_line_str
+                0x000000c7       0x97 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .debug_line_str
+                0x0000015e       0xa9 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .debug_line_str
+                0x00000207       0x79 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .debug_line_str
+                0x00000280       0xae /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+ .debug_line_str
+                0x0000032e       0x93 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .debug_line_str
+                0x000003c1       0xa2 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .debug_line_str
+                0x00000463       0x97 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .debug_line_str
+                0x000004fa       0x8e /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .debug_line_str
+                0x00000588       0xd7 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .debug_line_str
+                0x0000065f       0xa2 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ .debug_line_str
+                0x00000701       0xa8 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+ .debug_line_str
+                0x000007a9       0xa4 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .debug_line_str
+                0x0000084d       0xb9 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .debug_line_str
+                0x00000906       0xbd /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .debug_line_str
+                0x000009c3       0xb7 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_line_str
+                0x00000a7a       0xf4 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .debug_line_str
+                0x00000b6e       0xa7 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+
+.comment        0x00000000      0x17c
+ .comment       0x00000000       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .comment       0x00000013       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .comment       0x00000026       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .comment       0x00000039       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .comment       0x0000004c       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+ .comment       0x0000005f       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .comment       0x00000072       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .comment       0x00000085       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .comment       0x00000098       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .comment       0x000000ab       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .comment       0x000000be       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ .comment       0x000000d1       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+ .comment       0x000000e4       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .comment       0x000000f7       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .comment       0x0000010a       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .comment       0x0000011d       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .comment       0x00000130       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .comment       0x00000143       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+ .comment       0x00000156       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .comment       0x00000169       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+
+.debug_frame    0x00000000      0x948
+ .debug_frame   0x00000000       0x4c /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .debug_frame   0x0000004c       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .debug_frame   0x000000c0       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .debug_frame   0x00000134       0x94 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .debug_frame   0x000001c8      0x1b8 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+ .debug_frame   0x00000380       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+ .debug_frame   0x000003f4      0x104 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+ .debug_frame   0x000004f8       0x54 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+ .debug_frame   0x0000054c       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+ .debug_frame   0x00000580       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+ .debug_frame   0x000005b4       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+ .debug_frame   0x000005e8       0x94 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+ .debug_frame   0x0000067c       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+ .debug_frame   0x000006b0       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+ .debug_frame   0x00000724       0x80 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+ .debug_frame   0x000007a4       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_frame   0x000007d8       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .debug_frame   0x0000084c       0xfc /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj

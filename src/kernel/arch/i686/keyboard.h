@@ -1,0 +1,5 @@
+#pragma once
+#include <arch/i686/irq.h>
+
+void keyboard_init();
+void keyboard_handler(Registers* regs);
