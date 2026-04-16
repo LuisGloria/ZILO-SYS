@@ -44,9 +44,3 @@ $ sudo dnf install gcc gcc-c++ make bison flex gmp-devel libmpc-devel mpfr-devel
 * run `./debug.sh`
 
 **Troubleshooting**: Bochs has proven to be pretty unreliable. Check [this article](https://github.com/nanobyte-dev/nanobyte_os/wiki/Frequent-issues#bochs-doesnt-work) for some troubleshooting tips.
-
-## Links
-
-* [YouTube](https://www.youtube.com/channel/UCSPIuWADJIMIf9Erf--XAsA)
-* [Discord channel](https://discord.gg/RgHc5XrCEw)
-* [Patreon](https://www.patreon.com/nanobyte)
