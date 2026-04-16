@@ -1,15 +1,13 @@
-# nanobyte_os
-This repo contains the code from the ["Building an OS"](https://www.youtube.com/watch?v=9t-SPC7Tczc&list=PLFjM7v6KGMpiH2G-kT781ByCNC_0pKpPN) tutorial on the ["Nanobyte"](https://www.youtube.com/channel/UCSPIuWADJIMIf9Erf--XAsA) YouTube channel.
+# ZILO-SYS
+An entire OS written from scratch inspired by Mainframe z/OS && VM/ESA systems.
 
-This branch contains the code as written in [Part 10 - Hardware interrupts](https://youtu.be/FD48Lx7Rnx0), with some minor bug fixes:
-
-* fixed bochs configuration
+This OS is inspired in nanobyte OS, in fact it contains part of it's code.
 
 ## Prerequisites
 
 The project requires a Unix-like environment. If you are using Windows, there are various ways of setting one up (WSL, a Linux virtual machine, Cygwin, MSYS2). I recommend using WSL, which is the [easiest to setup](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-For Part 10, you need the following tools:
+Tools needed to build:
 
 * `make`
 * `nasm`
