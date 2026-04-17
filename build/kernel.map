@@ -1,9 +1,9 @@
 Archive member included to satisfy reference by file (symbol)
 
 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
-                              /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj (__udivdi3)
+                              /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj (__udivdi3)
 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
-                              /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj (__umoddi3)
+                              /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj (__umoddi3)
 
 There are no discarded input sections
 
@@ -14,28 +14,28 @@ Name             Origin             Length             Attributes
 
 Linker script and memory map
 
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/gdt.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/idt.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/io.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/isr.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
-LOAD /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/gdt.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/idt.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/io.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/isr.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
 LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x00100000                        phys = 0x100000
                 0x00100000                        . = phys
@@ -43,19 +43,19 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
 .entry          0x00100000      0x149
                 0x00100000                        __entry_start = .
  *(.entry)
- .entry         0x00100000      0x149 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .entry         0x00100000      0x149 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
                 0x00100000                start
 
-.text           0x00100150     0x3bb6
+.text           0x00100150     0x3ec6
                 0x00100150                        __text_start = .
  *(.text)
- .text          0x00100150       0x25 /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/gdt.obj
+ .text          0x00100150       0x25 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/gdt.obj
                 0x00100150                i686_GDT_Load
  *fill*         0x00100175        0xb 
- .text          0x00100180        0xd /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/idt.obj
+ .text          0x00100180        0xd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/idt.obj
                 0x00100180                i686_IDT_Load
  *fill*         0x0010018d        0x3 
- .text          0x00100190       0x1d /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/io.obj
+ .text          0x00100190       0x1d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/io.obj
                 0x00100190                i686_outb
                 0x0010019b                i686_inb
                 0x001001a4                i686_Panic
@@ -63,7 +63,7 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x001001a8                i686_DisableInterrupts
                 0x001001aa                crash_me
  *fill*         0x001001ad        0x3 
- .text          0x001001b0      0xa6d /home/lsys/Scripts/OSDEV3/build/kernel/asm/arch/i686/isr.obj
+ .text          0x001001b0      0xa6d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/isr.obj
                 0x001001b0                i686_ISR0
                 0x001001b9                i686_ISR1
                 0x001001c2                i686_ISR2
@@ -320,374 +320,373 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x00100bd8                i686_ISR253
                 0x00100be1                i686_ISR254
                 0x00100bea                i686_ISR255
- .text          0x00100c1d       0x19 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+ .text          0x00100c1d       0x19 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
                 0x00100c1d                timer
- .text          0x00100c36       0xf5 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+ .text          0x00100c36       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
                 0x00100c36                memcpy
                 0x00100c88                memset
                 0x00100ccb                memcmp
- .text          0x00100d2b       0x82 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+ .text          0x00100d2b       0x82 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
                 0x00100d2b                pit_handler
                 0x00100d3e                pit_get_ticks
                 0x00100d48                pit_init
- .text          0x00100dad      0x199 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+ .text          0x00100dad      0x4a9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
                 0x00100e46                shell_execute
- .text          0x00100f46      0x915 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
-                0x00100f46                putchr
-                0x00100f75                putcolor
-                0x00100fa7                getchr
-                0x00100fc9                getcolor
-                0x00100fee                setcursor
-                0x0010105f                clrscr
-                0x001010ed                scrollback
-                0x001011db                putc
-                0x001012eb                puts
-                0x0010131a                printf_unsigned
-                0x001013be                printf_signed
-                0x0010141b                printf
-                0x001017c2                print_buffer
- .text          0x0010185b       0xe2 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
-                0x0010185b                strcmp
-                0x0010189a                strlen
-                0x001018c1                strncmp
- .text          0x0010193d      0x411 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
-                0x0010193d                text_set_color
-                0x00101ab5                text_clear
-                0x00101b0d                text_putc
-                0x00101c19                text_print
- .text          0x00101d4e       0x2f /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
-                0x00101d4e                sleep
-                0x00101d70                get_ticks
- .text          0x00101d7d       0x47 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
-                0x00101d7d                vga_putpixel
- .text          0x00101dc4       0x32 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
-                0x00101dc4                HAL_Initialize
- .text          0x00101df6       0x1d /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
-                0x00101df6                i686_GDT_Initialize
- .text          0x00101e13       0xba /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
-                0x00101e13                i686_IDT_SetGate
-                0x00101e74                i686_IDT_EnableGate
-                0x00101e94                i686_IDT_DisableGate
-                0x00101eb4                i686_IDT_Initialize
- .text          0x00101ecd       0x1b /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
-                0x00101ecd                i686_iowait
- .text          0x00101ee8       0xb0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
-                0x00101ee8                i686_IRQ_Handler
-                0x00101f3e                i686_IRQ_Initialize
-                0x00101f85                i686_IRQ_RegisterHandler
- .text          0x00101f98      0x1a1 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
-                0x00101f98                i686_ISR_Initialize
-                0x00101fda                i686_ISR_Handler
-                0x00102115                i686_ISR_RegisterHandler
- .text          0x00102139     0x1489 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
-                0x00102139                i686_ISR_InitializeGates
- .text          0x001035c2      0x233 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
-                0x00103621                keyboard_handler
-                0x001037da                keyboard_init
- .text          0x001037f5      0x2b6 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
-                0x001037f5                i686_PIC_Configure
-                0x001038e7                i686_PIC_SendEndOfInterrupt
-                0x00103917                i686_PIC_Disable
-                0x00103951                i686_PIC_Mask
-                0x001039a5                i686_PIC_Unmask
-                0x001039fb                i686_PIC_ReadIrqRequestRegister
-                0x00103a53                i686_PIC_ReadInServiceRegister
- *fill*         0x00103aab        0x5 
- .text          0x00103ab0      0x11a /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
-                0x00103ab0                __udivdi3
- *fill*         0x00103bca        0x6 
- .text          0x00103bd0      0x136 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
-                0x00103bd0                __umoddi3
+ .text          0x00101256      0x915 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00101256                putchr
+                0x00101285                putcolor
+                0x001012b7                getchr
+                0x001012d9                getcolor
+                0x001012fe                setcursor
+                0x0010136f                clrscr
+                0x001013fd                scrollback
+                0x001014eb                putc
+                0x001015fb                puts
+                0x0010162a                printf_unsigned
+                0x001016ce                printf_signed
+                0x0010172b                printf
+                0x00101ad2                print_buffer
+ .text          0x00101b6b       0xe2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+                0x00101b6b                strcmp
+                0x00101baa                strlen
+                0x00101bd1                strncmp
+ .text          0x00101c4d      0x411 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+                0x00101c4d                text_set_color
+                0x00101dc5                text_clear
+                0x00101e1d                text_putc
+                0x00101f29                text_print
+ .text          0x0010205e       0x2f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+                0x0010205e                sleep
+                0x00102080                get_ticks
+ .text          0x0010208d       0x47 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+                0x0010208d                vga_putpixel
+ .text          0x001020d4       0x32 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+                0x001020d4                HAL_Initialize
+ .text          0x00102106       0x1d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+                0x00102106                i686_GDT_Initialize
+ .text          0x00102123       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x00102123                i686_IDT_SetGate
+                0x00102184                i686_IDT_EnableGate
+                0x001021a4                i686_IDT_DisableGate
+                0x001021c4                i686_IDT_Initialize
+ .text          0x001021dd       0x1b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+                0x001021dd                i686_iowait
+ .text          0x001021f8       0xb0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+                0x001021f8                i686_IRQ_Handler
+                0x0010224e                i686_IRQ_Initialize
+                0x00102295                i686_IRQ_RegisterHandler
+ .text          0x001022a8      0x1a1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+                0x001022a8                i686_ISR_Initialize
+                0x001022ea                i686_ISR_Handler
+                0x00102425                i686_ISR_RegisterHandler
+ .text          0x00102449     0x1489 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+                0x00102449                i686_ISR_InitializeGates
+ .text          0x001038d2      0x233 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+                0x00103931                keyboard_handler
+                0x00103aea                keyboard_init
+ .text          0x00103b05      0x2b6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+                0x00103b05                i686_PIC_Configure
+                0x00103bf7                i686_PIC_SendEndOfInterrupt
+                0x00103c27                i686_PIC_Disable
+                0x00103c61                i686_PIC_Mask
+                0x00103cb5                i686_PIC_Unmask
+                0x00103d0b                i686_PIC_ReadIrqRequestRegister
+                0x00103d63                i686_PIC_ReadInServiceRegister
+ *fill*         0x00103dbb        0x5 
+ .text          0x00103dc0      0x11a /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+                0x00103dc0                __udivdi3
+ *fill*         0x00103eda        0x6 
+ .text          0x00103ee0      0x136 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                0x00103ee0                __umoddi3
 
-.data           0x00103d08       0x2e
-                0x00103d08                        __data_start = .
+.data           0x00104018       0x2e
+                0x00104018                        __data_start = .
  *(.data)
- .data          0x00103d08        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- .data          0x00103d08        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
- .data          0x00103d08        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
- .data          0x00103d08        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- .data          0x00103d08        0x4 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
-                0x00103d08                g_ScreenBuffer
- .data          0x00103d0c        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
- .data          0x00103d0c        0x1 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .data          0x00103d0d        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
- .data          0x00103d0d        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- .data          0x00103d0d        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
- *fill*         0x00103d0d        0x3 
- .data          0x00103d10       0x1e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
-                0x00103d10                g_GDT
-                0x00103d28                g_GDTDescriptor
- *fill*         0x00103d2e        0x2 
- .data          0x00103d30        0x6 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
-                0x00103d30                g_IDTDescriptor
- .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
- .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
- .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
- .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
- .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
- .data          0x00103d36        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
- .data          0x00103d36        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .data          0x00103d36        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+ .data          0x00104018        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .data          0x00104018        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .data          0x00104018        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .data          0x00104018        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .data          0x00104018        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00104018                g_ScreenBuffer
+ .data          0x0010401c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .data          0x0010401c        0x1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .data          0x0010401d        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .data          0x0010401d        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .data          0x0010401d        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ *fill*         0x0010401d        0x3 
+ .data          0x00104020       0x1e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+                0x00104020                g_GDT
+                0x00104038                g_GDTDescriptor
+ *fill*         0x0010403e        0x2 
+ .data          0x00104040        0x6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x00104040                g_IDTDescriptor
+ .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .data          0x00104046        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .data          0x00104046        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.rodata         0x00103d40      0x86d
-                0x00103d40                        __rodata_start = .
+.rodata         0x00104060     0x11ed
+                0x00104060                        __rodata_start = .
  *(.rodata)
- .rodata        0x00103d40      0x32a /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- *fill*         0x0010406a        0x2 
- .rodata        0x0010406c       0x51 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- *fill*         0x001040bd        0x3 
- .rodata        0x001040c0       0x1f /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
-                0x001040c0                SCREEN_WIDTH
-                0x001040c4                SCREEN_HEIGHT
-                0x001040c8                DEFAULT_COLOR
-                0x001040cc                g_HexChars
- *fill*         0x001040df        0x1 
- .rodata        0x001040e0        0x4 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .rodata        0x001040e4        0x4 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- *fill*         0x001040e8       0x18 
- .rodata        0x00104100      0x34f /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
- *fill*         0x0010444f       0x11 
- .rodata        0x00104460      0x14d /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+ .rodata        0x00104060      0x32a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ *fill*         0x0010438a        0x2 
+ .rodata        0x0010438c      0x9d8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .rodata        0x00104d64       0x1f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00104d64                SCREEN_WIDTH
+                0x00104d68                SCREEN_HEIGHT
+                0x00104d6c                DEFAULT_COLOR
+                0x00104d70                g_HexChars
+ *fill*         0x00104d83        0x1 
+ .rodata        0x00104d84        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .rodata        0x00104d88        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ *fill*         0x00104d8c       0x14 
+ .rodata        0x00104da0      0x34f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ *fill*         0x001050ef       0x11 
+ .rodata        0x00105100      0x14d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
 
-.eh_frame       0x001045b0       0xd8
- .eh_frame      0x001045b0       0x64 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .eh_frame      0x00104614       0x74 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+.eh_frame       0x00105250       0xd8
+ .eh_frame      0x00105250       0x64 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .eh_frame      0x001052b4       0x74 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.bss            0x001046a0      0xd74
-                0x001046a0                        __bss_start = .
+.bss            0x00105340      0xd74
+                0x00105340                        __bss_start = .
  *(.bss)
- .bss           0x001046a0        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- .bss           0x001046a0        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
- .bss           0x001046a0        0x4 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
- .bss           0x001046a4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- .bss           0x001046a4        0x8 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
-                0x001046a4                g_ScreenX
-                0x001046a8                g_ScreenY
- .bss           0x001046ac        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
- .bss           0x001046ac        0x8 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .bss           0x001046b4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
- .bss           0x001046b4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- .bss           0x001046b4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
- .bss           0x001046b4        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
- *fill*         0x001046b4        0xc 
- .bss           0x001046c0      0x800 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
-                0x001046c0                g_IDT
- .bss           0x00104ec0        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
- .bss           0x00104ec0       0x40 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
-                0x00104ec0                g_IRQHandlers
- .bss           0x00104f00      0x400 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
-                0x00104f00                g_ISRHandlers
- .bss           0x00105300        0x0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
- .bss           0x00105300      0x108 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
- .bss           0x00105408        0xc /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
-                0x00105408                PIC_ICW1
-                0x0010540c                PIC_ICW4
-                0x00105410                PIC_CMD
- .bss           0x00105414        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .bss           0x00105414        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
-                0x00105414                        __end = .
-OUTPUT(/home/lsys/Scripts/OSDEV3/build/kernel.bin binary)
+ .bss           0x00105340        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .bss           0x00105340        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .bss           0x00105340        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .bss           0x00105344        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .bss           0x00105344        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00105344                g_ScreenX
+                0x00105348                g_ScreenY
+ .bss           0x0010534c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .bss           0x0010534c        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .bss           0x00105354        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .bss           0x00105354        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .bss           0x00105354        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .bss           0x00105354        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ *fill*         0x00105354        0xc 
+ .bss           0x00105360      0x800 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x00105360                g_IDT
+ .bss           0x00105b60        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .bss           0x00105b60       0x40 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+                0x00105b60                g_IRQHandlers
+ .bss           0x00105ba0      0x400 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+                0x00105ba0                g_ISRHandlers
+ .bss           0x00105fa0        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .bss           0x00105fa0      0x108 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .bss           0x001060a8        0xc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+                0x001060a8                PIC_ICW1
+                0x001060ac                PIC_ICW4
+                0x001060b0                PIC_CMD
+ .bss           0x001060b4        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .bss           0x001060b4        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                0x001060b4                        __end = .
+OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
 
 .debug_info     0x00000000     0x30db
- .debug_info    0x00000000      0x23d /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- .debug_info    0x0000023d      0x1e8 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
- .debug_info    0x00000425      0x233 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
- .debug_info    0x00000658      0x1dd /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- .debug_info    0x00000835      0x54c /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
- .debug_info    0x00000d81      0x111 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
- .debug_info    0x00000e92      0x287 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .debug_info    0x00001119       0xd1 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
- .debug_info    0x000011ea       0xce /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- .debug_info    0x000012b8       0xde /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
- .debug_info    0x00001396      0x1fa /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
- .debug_info    0x00001590      0x24e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
- .debug_info    0x000017de       0xac /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
- .debug_info    0x0000188a      0x2d0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
- .debug_info    0x00001b5a      0x29c /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
- .debug_info    0x00001df6      0xd09 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_info    0x00002aff      0x375 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
- .debug_info    0x00002e74      0x267 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+ .debug_info    0x00000000      0x23d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_info    0x0000023d      0x1e8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_info    0x00000425      0x233 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_info    0x00000658      0x1dd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_info    0x00000835      0x54c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_info    0x00000d81      0x111 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_info    0x00000e92      0x287 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .debug_info    0x00001119       0xd1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_info    0x000011ea       0xce /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_info    0x000012b8       0xde /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_info    0x00001396      0x1fa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_info    0x00001590      0x24e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_info    0x000017de       0xac /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_info    0x0000188a      0x2d0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_info    0x00001b5a      0x29c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_info    0x00001df6      0xd09 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_info    0x00002aff      0x375 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_info    0x00002e74      0x267 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
 
 .debug_abbrev   0x00000000     0x132e
- .debug_abbrev  0x00000000      0x13c /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- .debug_abbrev  0x0000013c       0xe2 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
- .debug_abbrev  0x0000021e      0x113 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
- .debug_abbrev  0x00000331      0x175 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- .debug_abbrev  0x000004a6      0x1f6 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
- .debug_abbrev  0x0000069c       0xb0 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
- .debug_abbrev  0x0000074c      0x14d /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .debug_abbrev  0x00000899       0xa7 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
- .debug_abbrev  0x00000940       0x97 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- .debug_abbrev  0x000009d7       0x85 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
- .debug_abbrev  0x00000a5c       0xf0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
- .debug_abbrev  0x00000b4c      0x122 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
- .debug_abbrev  0x00000c6e       0x6d /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
- .debug_abbrev  0x00000cdb      0x179 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
- .debug_abbrev  0x00000e54      0x150 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
- .debug_abbrev  0x00000fa4       0xbf /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_abbrev  0x00001063      0x171 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
- .debug_abbrev  0x000011d4      0x15a /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+ .debug_abbrev  0x00000000      0x13c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_abbrev  0x0000013c       0xe2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_abbrev  0x0000021e      0x113 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_abbrev  0x00000331      0x175 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_abbrev  0x000004a6      0x1f6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_abbrev  0x0000069c       0xb0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_abbrev  0x0000074c      0x14d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .debug_abbrev  0x00000899       0xa7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_abbrev  0x00000940       0x97 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_abbrev  0x000009d7       0x85 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_abbrev  0x00000a5c       0xf0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_abbrev  0x00000b4c      0x122 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_abbrev  0x00000c6e       0x6d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_abbrev  0x00000cdb      0x179 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_abbrev  0x00000e54      0x150 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_abbrev  0x00000fa4       0xbf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_abbrev  0x00001063      0x171 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_abbrev  0x000011d4      0x15a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
 
 .debug_aranges  0x00000000      0x248
  .debug_aranges
-                0x00000000       0x28 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+                0x00000000       0x28 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
  .debug_aranges
-                0x00000028       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+                0x00000028       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
  .debug_aranges
-                0x00000048       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+                0x00000048       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
  .debug_aranges
-                0x00000068       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+                0x00000068       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
  .debug_aranges
-                0x00000088       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+                0x00000088       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
  .debug_aranges
-                0x000000a8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+                0x000000a8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
  .debug_aranges
-                0x000000c8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+                0x000000c8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
  .debug_aranges
-                0x000000e8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+                0x000000e8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
  .debug_aranges
-                0x00000108       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+                0x00000108       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
  .debug_aranges
-                0x00000128       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+                0x00000128       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
  .debug_aranges
-                0x00000148       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+                0x00000148       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
  .debug_aranges
-                0x00000168       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+                0x00000168       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
  .debug_aranges
-                0x00000188       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+                0x00000188       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
  .debug_aranges
-                0x000001a8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+                0x000001a8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
  .debug_aranges
-                0x000001c8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+                0x000001c8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
  .debug_aranges
-                0x000001e8       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+                0x000001e8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
  .debug_aranges
-                0x00000208       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+                0x00000208       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
  .debug_aranges
-                0x00000228       0x20 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+                0x00000228       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
 
 .debug_rnglists
                 0x00000000       0x1a
  .debug_rnglists
-                0x00000000       0x1a /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+                0x00000000       0x1a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
 
-.debug_line     0x00000000     0x1303
- .debug_line    0x00000000       0xa3 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- .debug_line    0x000000a3       0xcc /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
- .debug_line    0x0000016f       0x8c /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
- .debug_line    0x000001fb      0x129 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- .debug_line    0x00000324      0x3b1 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
- .debug_line    0x000006d5       0xe6 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
- .debug_line    0x000007bb      0x258 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .debug_line    0x00000a13       0x77 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
- .debug_line    0x00000a8a       0x77 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- .debug_line    0x00000b01       0x85 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
- .debug_line    0x00000b86       0x5c /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
- .debug_line    0x00000be2       0x89 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
- .debug_line    0x00000c6b       0x5e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
- .debug_line    0x00000cc9       0xc0 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
- .debug_line    0x00000d89       0xd8 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
- .debug_line    0x00000e61      0x25f /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_line    0x000010c0      0x134 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
- .debug_line    0x000011f4      0x10f /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+.debug_line     0x00000000     0x134b
+ .debug_line    0x00000000       0xa3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_line    0x000000a3       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_line    0x0000016f       0x8c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_line    0x000001fb      0x175 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_line    0x00000370      0x3b1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_line    0x00000721       0xe6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_line    0x00000807      0x258 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .debug_line    0x00000a5f       0x77 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_line    0x00000ad6       0x77 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_line    0x00000b4d       0x85 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_line    0x00000bd2       0x5c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_line    0x00000c2e       0x89 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_line    0x00000cb7       0x5e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_line    0x00000d15       0xc0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_line    0x00000dd5       0xd8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_line    0x00000ead      0x25f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_line    0x0000110c      0x130 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_line    0x0000123c      0x10f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
 
 .debug_str      0x00000000     0x29ef
- .debug_str     0x00000000      0x177 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- .debug_str     0x00000177      0x125 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
- .debug_str     0x0000029c      0x180 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
- .debug_str     0x0000041c      0x183 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- .debug_str     0x0000059f      0x24f /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
- .debug_str     0x000007ee       0x88 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
- .debug_str     0x00000876      0x15c /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .debug_str     0x000009d2       0xfc /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
- .debug_str     0x00000ace       0xea /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- .debug_str     0x00000bb8      0x14e /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
- .debug_str     0x00000d06      0x2fa /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
- .debug_str     0x00001000      0x291 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
- .debug_str     0x00001291       0xf6 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
- .debug_str     0x00001387      0x22e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
- .debug_str     0x000015b5      0x1cb /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
- .debug_str     0x00001780      0xd5e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_str     0x000024de      0x23e /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
- .debug_str     0x0000271c      0x2d3 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+ .debug_str     0x00000000      0x177 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_str     0x00000177      0x125 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_str     0x0000029c      0x180 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_str     0x0000041c      0x183 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_str     0x0000059f      0x24f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_str     0x000007ee       0x88 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_str     0x00000876      0x15c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .debug_str     0x000009d2       0xfc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_str     0x00000ace       0xea /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_str     0x00000bb8      0x14e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_str     0x00000d06      0x2fa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_str     0x00001000      0x291 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_str     0x00001291       0xf6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_str     0x00001387      0x22e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_str     0x000015b5      0x1cb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_str     0x00001780      0xd5e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_str     0x000024de      0x23e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_str     0x0000271c      0x2d3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
 
 .debug_line_str
-                0x00000000      0xc15
+                0x00000000      0xd91
  .debug_line_str
-                0x00000000       0xc7 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
+                0x00000000       0xdd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
  .debug_line_str
-                0x000000c7       0x97 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
+                0x000000dd       0xad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
  .debug_line_str
-                0x0000015e       0xa9 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
+                0x0000018a       0xbf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
  .debug_line_str
-                0x00000207       0x79 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
+                0x00000249       0x8f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
  .debug_line_str
-                0x00000280       0xae /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
+                0x000002d8       0xc2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
  .debug_line_str
-                0x0000032e       0x93 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
+                0x0000039a       0xa9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
  .debug_line_str
-                0x000003c1       0xa2 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
+                0x00000443       0xb6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
  .debug_line_str
-                0x00000463       0x97 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
+                0x000004f9       0xad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
  .debug_line_str
-                0x000004fa       0x8e /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
+                0x000005a6       0xa4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
  .debug_line_str
-                0x00000588       0xd7 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
+                0x0000064a       0xed /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
  .debug_line_str
-                0x0000065f       0xa2 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
+                0x00000737       0xb8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
  .debug_line_str
-                0x00000701       0xa8 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
+                0x000007ef       0xbe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
  .debug_line_str
-                0x000007a9       0xa4 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
+                0x000008ad       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
  .debug_line_str
-                0x0000084d       0xb9 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
+                0x00000967       0xcf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
  .debug_line_str
-                0x00000906       0xbd /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
+                0x00000a36       0xd3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
  .debug_line_str
-                0x000009c3       0xb7 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
+                0x00000b09       0xcd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
  .debug_line_str
-                0x00000a7a       0xf4 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
+                0x00000bd6       0xfe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
  .debug_line_str
-                0x00000b6e       0xa7 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+                0x00000cd4       0xbd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
 
 .comment        0x00000000      0x17c
- .comment       0x00000000       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- .comment       0x00000013       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
- .comment       0x00000026       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
- .comment       0x00000039       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- .comment       0x0000004c       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
- .comment       0x0000005f       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
- .comment       0x00000072       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .comment       0x00000085       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
- .comment       0x00000098       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- .comment       0x000000ab       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
- .comment       0x000000be       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
- .comment       0x000000d1       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
- .comment       0x000000e4       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
- .comment       0x000000f7       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
- .comment       0x0000010a       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
- .comment       0x0000011d       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
- .comment       0x00000130       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
- .comment       0x00000143       0x13 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+ .comment       0x00000000       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .comment       0x00000013       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .comment       0x00000026       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .comment       0x00000039       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .comment       0x0000004c       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .comment       0x0000005f       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .comment       0x00000072       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .comment       0x00000085       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .comment       0x00000098       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .comment       0x000000ab       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .comment       0x000000be       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .comment       0x000000d1       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .comment       0x000000e4       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .comment       0x000000f7       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .comment       0x0000010a       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .comment       0x0000011d       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .comment       0x00000130       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .comment       0x00000143       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
  .comment       0x00000156       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
  .comment       0x00000169       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
 .debug_frame    0x00000000      0x948
- .debug_frame   0x00000000       0x4c /home/lsys/Scripts/OSDEV3/build/kernel/c/main.obj
- .debug_frame   0x0000004c       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/memory.obj
- .debug_frame   0x000000c0       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/pit.obj
- .debug_frame   0x00000134       0x94 /home/lsys/Scripts/OSDEV3/build/kernel/c/shell.obj
- .debug_frame   0x000001c8      0x1b8 /home/lsys/Scripts/OSDEV3/build/kernel/c/stdio.obj
- .debug_frame   0x00000380       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/string.obj
- .debug_frame   0x000003f4      0x104 /home/lsys/Scripts/OSDEV3/build/kernel/c/text.obj
- .debug_frame   0x000004f8       0x54 /home/lsys/Scripts/OSDEV3/build/kernel/c/time.obj
- .debug_frame   0x0000054c       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/vga.obj
- .debug_frame   0x00000580       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/hal/hal.obj
- .debug_frame   0x000005b4       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/gdt.obj
- .debug_frame   0x000005e8       0x94 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/idt.obj
- .debug_frame   0x0000067c       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/io.obj
- .debug_frame   0x000006b0       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/irq.obj
- .debug_frame   0x00000724       0x80 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isr.obj
- .debug_frame   0x000007a4       0x34 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_frame   0x000007d8       0x74 /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/keyboard.obj
- .debug_frame   0x0000084c       0xfc /home/lsys/Scripts/OSDEV3/build/kernel/c/arch/i686/pic.obj
+ .debug_frame   0x00000000       0x4c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_frame   0x0000004c       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_frame   0x000000c0       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_frame   0x00000134       0x94 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_frame   0x000001c8      0x1b8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_frame   0x00000380       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_frame   0x000003f4      0x104 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+ .debug_frame   0x000004f8       0x54 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_frame   0x0000054c       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_frame   0x00000580       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_frame   0x000005b4       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_frame   0x000005e8       0x94 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_frame   0x0000067c       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_frame   0x000006b0       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_frame   0x00000724       0x80 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_frame   0x000007a4       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_frame   0x000007d8       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_frame   0x0000084c       0xfc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj

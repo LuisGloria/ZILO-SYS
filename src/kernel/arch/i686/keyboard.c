@@ -2,7 +2,7 @@
 #include "io.h"
 #include <stddef.h>
 #include <stdint.h>
-#include "../../text.h"   // adjust if needed
+#include "../../text.h"   // adjust if needed later, but works fine currently
 #include "../../shell.h"
 #include "../../retc.h"
 

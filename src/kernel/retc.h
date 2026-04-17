@@ -9,7 +9,6 @@ typedef enum
     RETC_FAIL
 } retc_t;
 
-// Optional helper (no .c needed)
 static inline const char* retc_str(retc_t code)
 {
     switch (code)

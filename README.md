@@ -1,13 +1,33 @@
+<<<<<<< HEAD
 # ZILO-SYS
 An entire OS written from scratch inspired by Mainframe z/OS && VM/ESA systems.
 
 This OS is inspired in nanobyte OS, in fact it contains part of it's code.
+=======
+![Logo](https://github.com/LuisGloria/ZILO-SYS/blob/main/Logo.png)
+This OS has been inspired on the mainframe systems like z/OS && VM/ESA for example,
+The bootloader and kernel are originally from [nanobyte_os](https://github.com/nanobyte-dev/nanobyte_os/), but with my own aditions and libs.
+
+## New in version 1.3b:
+* VGA Mode (not used yet)
+* Paging
+* Shell updates
+* Return Codes (retc)
+* PIT driver
+
+* Note, this is still a beta OS, might be unstable, things may and will change and it's more of a hobby project rather than an actual usable system.
+>>>>>>> 9880b65 (Version 1.3b)
 
 ## Prerequisites
 
-The project requires a Unix-like environment. If you are using Windows, there are various ways of setting one up (WSL, a Linux virtual machine, Cygwin, MSYS2). I recommend using WSL, which is the [easiest to setup](https://learn.microsoft.com/en-us/windows/wsl/install).
+The project requires a Unix-like environment to build. If you are using Windows you can either install WS or run a Linux virtual.
+Recommend using [WLS](https://learn.microsoft.com/en-us/windows/wsl/install).
 
+<<<<<<< HEAD
 Tools needed to build:
+=======
+You need the following tools to build:
+>>>>>>> 9880b65 (Version 1.3b)
 
 * `make`
 * `nasm`
@@ -44,3 +64,10 @@ $ sudo dnf install gcc gcc-c++ make bison flex gmp-devel libmpc-devel mpfr-devel
 * run `./debug.sh`
 
 **Troubleshooting**: Bochs has proven to be pretty unreliable. Check [this article](https://github.com/nanobyte-dev/nanobyte_os/wiki/Frequent-issues#bochs-doesnt-work) for some troubleshooting tips.
+<<<<<<< HEAD
+=======
+
+## Links
+
+* [Twitter/X](https://x.com/LG10sys)
+>>>>>>> 9880b65 (Version 1.3b)

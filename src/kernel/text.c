@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include <arch/i686/io.h>
+#include "arch/i686/io.h"
 
 static volatile uint16_t* const VGA = (uint16_t*)0xB8000;
 
