@@ -4,12 +4,14 @@
 This OS has been inspired on the mainframe systems like z/OS && VM/ESA for example,
 The bootloader and kernel are originally from [nanobyte_os](https://github.com/nanobyte-dev/nanobyte_os/), but with my own aditions and libs.
 
-## New in version 1.3b:
-* VGA Mode (not used yet)
-* Paging
-* Shell updates
-* Return Codes (retc)
-* PIT driver
+## New in version 1.4:
+* RTL8139 driver
+* ARP
+* Kernel Panic
+* Vfs/RAMFS
+* ATA
+* Framebuffer
+* Fixed lib paths
 
 * Note, this is still a beta OS, might be unstable, things may and will change and it's more of a hobby project rather than an actual usable system.
 
@@ -58,3 +60,7 @@ $ sudo dnf install gcc gcc-c++ make bison flex gmp-devel libmpc-devel mpfr-devel
 ## Links
 
 * [Twitter/X](https://x.com/LG10sys)
+
+# IMPORTANT!
+
+Once again, this OS has [nanobyte_os](https://github.com/nanobyte-dev/nanobyte_os/) code at it's core, go support nanobyte :3
