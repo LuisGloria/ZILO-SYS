@@ -9,7 +9,7 @@ void sleep(uint32_t ms)
     while ((pit_get_ticks() - start) < ms)
     {
         // halt CPU until next interrupt (saves power + cleaner)
-        __asm__ volatile ("hlt");
+        __asm__ volatile ("hlt"); // Might be broken...?
     }
 }
 

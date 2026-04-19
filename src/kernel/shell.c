@@ -1,7 +1,19 @@
 #include "text.h"
 #include "string.h"
 #include "retc.h"
-//#include "time.h"
+#include "vfs/vfs.h"
+#include "panic.h"
+
+static void ls_print(const char* name)
+{
+    text_print(name);
+    text_print("\n");
+}
+
+static void shell_newline()
+{
+    text_print("\n> ");
+}
 
 static const char* skip_spaces(const char* s)
 {
@@ -40,15 +52,41 @@ retc_t shell_execute(const char* cmdline)
     if (strcmp(cmd, "help") == 0)
     {
         text_print("Commands:\n");
-        text_print(" help, clear, daemon, hello, indie, say\n");
+        text_print(" help, cat, crash, clear, daemon, hello, indie, say\n");
         text_print("\n");
-        text_print("clear.....................Clears the screen\n");
+        text_print("cat.......................Writes what is on a file to the screen\n");
+        text_print("   |______________________usage: cat <file>\n");
+        text_print("clear.....................Will crash the system\n");
+        text_print("crash.....................Clears the screen\n");
         text_print("daemon....................Daemon :3\n");
         text_print("hello.....................Hello message\n");
         text_print("indie.....................Indie :3\n");
+        text_print("listdir...................Lists all the dirs in a dir\n");
         text_print("say.......................Prints somthing to the screen\n");
         text_print("   |______________________usage: say <text>\n");
         return RETC_OK;
+    }
+    else if (strcmp(cmd, "cat") == 0)
+    {
+        vfs_file_t* f = vfs_open(args);
+
+        if (!f)
+        {
+            text_print("File not found\n");
+            return RETC_WRONG_ARG;
+        }
+
+        char buf[128];
+        int r = vfs_read(f, buf, sizeof(buf)-1, 0);
+        buf[r] = 0;
+
+        text_print(buf);
+        return RETC_OK;
+    }
+    else if (strcmp(cmd, "crash") == 0)
+    {
+        panic_now("Manual crash triggered from shell");
+        return RETC_OK; // unreachable
     }
     else if (strcmp(cmd, "clear") == 0)
     {
@@ -104,6 +142,11 @@ retc_t shell_execute(const char* cmdline)
         text_print("{0x0D}             =:=- {0x0F}\n");
         return RETC_OK;
     }
+    else if (strcmp(cmd, "listdir") == 0)
+    {
+        vfs_list(ls_print);
+        return RETC_OK;
+    }
     else if (strcmp(cmd, "say") == 0)
     {
         if (*args)
@@ -113,7 +156,7 @@ retc_t shell_execute(const char* cmdline)
             return RETC_OK;
         }
 
-        return RETC_INVALID;
+        return RETC_WRONG_ARG;
     }
 
     return RETC_UNKNOWN_CMD;

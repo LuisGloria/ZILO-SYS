@@ -1,8 +1,9 @@
 #include "keyboard.h"
+#include "../../text.h"
 #include "io.h"
 #include <stddef.h>
 #include <stdint.h>
-#include "../../text.h"   // adjust if needed later, but works fine currently
+#include "../../text.h"
 #include "../../shell.h"
 #include "../../retc.h"
 
@@ -12,7 +13,7 @@ static char input_buffer[INPUT_MAX];
 static int input_pos = 0;
 static int shift_pressed = 0;
 
-// Simple US keyboard scancode map (set 1)
+//US keyboard scancode map (set 1)
 static const char scancode_map[128] = {
     0, 27, '1','2','3','4','5','6','7','8','9','0','-','=', '\b',
     '\t',
@@ -46,8 +47,6 @@ void keyboard_handler(Registers* regs)
 {
     uint8_t scancode = i686_inb(0x60);
 
-    // SHIFT handling (keep your code here)
-
     if (scancode & 0x80)
         return;
 
@@ -56,6 +55,24 @@ void keyboard_handler(Registers* regs)
 
     if (!c)
         return;
+
+    if (scancode == 0x48)
+    {
+        text_scroll_up();
+        return;
+    }
+
+    if (scancode == 0x50)
+    {
+        text_scroll_down();
+        return;
+    }
+
+    if (scancode == 0x4D)
+    {
+        text_follow_cursor();
+        return;
+    }
 
     // ENTER
     if (c == '\n')
@@ -68,7 +85,7 @@ void keyboard_handler(Registers* regs)
 
         if (rc != RETC_OK)
         {
-            text_set_color(0x04); // red
+            text_set_color(0x04);
 
             text_print(retc_str(rc));
             text_print(", RETC=");
@@ -81,7 +98,7 @@ void keyboard_handler(Registers* regs)
             text_print(num);
             text_print("\n");
 
-            text_set_color(0x0F); // reset to white
+            text_set_color(0x0F);
         }
 
         input_pos = 0;
@@ -109,7 +126,7 @@ void keyboard_handler(Registers* regs)
     }
 }
 
-// Initialize keyboard (hook IRQ1)
+// Initialize keyboard (hook to IRQ1)
 void keyboard_init()
 {
     i686_IRQ_RegisterHandler(1, keyboard_handler);

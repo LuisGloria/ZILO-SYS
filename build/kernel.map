@@ -18,16 +18,21 @@ LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/gdt.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/idt.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/io.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/isr.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
-LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
@@ -35,658 +40,877 @@ LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
 LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x00100000                        phys = 0x100000
                 0x00100000                        . = phys
 
-.entry          0x00100000      0x149
+.entry          0x00100000      0x1ee
                 0x00100000                        __entry_start = .
  *(.entry)
- .entry         0x00100000      0x149 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .entry         0x00100000      0x1ee /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
                 0x00100000                start
 
-.text           0x00100150     0x3ec6
-                0x00100150                        __text_start = .
+.text           0x001001f0     0x5466
+                0x001001f0                        __text_start = .
  *(.text)
- .text          0x00100150       0x25 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/gdt.obj
-                0x00100150                i686_GDT_Load
- *fill*         0x00100175        0xb 
- .text          0x00100180        0xd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/idt.obj
-                0x00100180                i686_IDT_Load
- *fill*         0x0010018d        0x3 
- .text          0x00100190       0x1d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/io.obj
-                0x00100190                i686_outb
-                0x0010019b                i686_inb
-                0x001001a4                i686_Panic
-                0x001001a6                i686_EnableInterrupts
-                0x001001a8                i686_DisableInterrupts
-                0x001001aa                crash_me
- *fill*         0x001001ad        0x3 
- .text          0x001001b0      0xa6d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/isr.obj
-                0x001001b0                i686_ISR0
-                0x001001b9                i686_ISR1
-                0x001001c2                i686_ISR2
-                0x001001cb                i686_ISR3
-                0x001001d4                i686_ISR4
-                0x001001dd                i686_ISR5
-                0x001001e6                i686_ISR6
-                0x001001ef                i686_ISR7
-                0x001001f8                i686_ISR8
-                0x001001ff                i686_ISR9
-                0x00100208                i686_ISR10
-                0x0010020f                i686_ISR11
-                0x00100216                i686_ISR12
-                0x0010021d                i686_ISR13
-                0x00100224                i686_ISR14
-                0x0010022b                i686_ISR15
-                0x00100234                i686_ISR16
-                0x0010023d                i686_ISR17
-                0x00100244                i686_ISR18
-                0x0010024d                i686_ISR19
-                0x00100256                i686_ISR20
-                0x0010025f                i686_ISR21
-                0x00100266                i686_ISR22
-                0x0010026f                i686_ISR23
-                0x00100278                i686_ISR24
-                0x00100281                i686_ISR25
-                0x0010028a                i686_ISR26
-                0x00100293                i686_ISR27
-                0x0010029c                i686_ISR28
-                0x001002a5                i686_ISR29
-                0x001002ae                i686_ISR30
-                0x001002b7                i686_ISR31
-                0x001002c0                i686_ISR32
-                0x001002c9                i686_ISR33
-                0x001002d2                i686_ISR34
-                0x001002db                i686_ISR35
-                0x001002e4                i686_ISR36
-                0x001002ed                i686_ISR37
-                0x001002f6                i686_ISR38
-                0x001002ff                i686_ISR39
-                0x00100308                i686_ISR40
-                0x00100311                i686_ISR41
-                0x0010031a                i686_ISR42
-                0x00100323                i686_ISR43
-                0x0010032c                i686_ISR44
-                0x00100335                i686_ISR45
-                0x0010033e                i686_ISR46
-                0x00100347                i686_ISR47
-                0x00100350                i686_ISR48
-                0x00100359                i686_ISR49
-                0x00100362                i686_ISR50
-                0x0010036b                i686_ISR51
-                0x00100374                i686_ISR52
-                0x0010037d                i686_ISR53
-                0x00100386                i686_ISR54
-                0x0010038f                i686_ISR55
-                0x00100398                i686_ISR56
-                0x001003a1                i686_ISR57
-                0x001003aa                i686_ISR58
-                0x001003b3                i686_ISR59
-                0x001003bc                i686_ISR60
-                0x001003c5                i686_ISR61
-                0x001003ce                i686_ISR62
-                0x001003d7                i686_ISR63
-                0x001003e0                i686_ISR64
-                0x001003e9                i686_ISR65
-                0x001003f2                i686_ISR66
-                0x001003fb                i686_ISR67
-                0x00100404                i686_ISR68
-                0x0010040d                i686_ISR69
-                0x00100416                i686_ISR70
-                0x0010041f                i686_ISR71
-                0x00100428                i686_ISR72
-                0x00100431                i686_ISR73
-                0x0010043a                i686_ISR74
-                0x00100443                i686_ISR75
-                0x0010044c                i686_ISR76
-                0x00100455                i686_ISR77
-                0x0010045e                i686_ISR78
-                0x00100467                i686_ISR79
-                0x00100470                i686_ISR80
-                0x00100479                i686_ISR81
-                0x00100482                i686_ISR82
-                0x0010048b                i686_ISR83
-                0x00100494                i686_ISR84
-                0x0010049d                i686_ISR85
-                0x001004a6                i686_ISR86
-                0x001004af                i686_ISR87
-                0x001004b8                i686_ISR88
-                0x001004c1                i686_ISR89
-                0x001004ca                i686_ISR90
-                0x001004d3                i686_ISR91
-                0x001004dc                i686_ISR92
-                0x001004e5                i686_ISR93
-                0x001004ee                i686_ISR94
-                0x001004f7                i686_ISR95
-                0x00100500                i686_ISR96
-                0x00100509                i686_ISR97
-                0x00100512                i686_ISR98
-                0x0010051b                i686_ISR99
-                0x00100524                i686_ISR100
-                0x0010052d                i686_ISR101
-                0x00100536                i686_ISR102
-                0x0010053f                i686_ISR103
-                0x00100548                i686_ISR104
-                0x00100551                i686_ISR105
-                0x0010055a                i686_ISR106
-                0x00100563                i686_ISR107
-                0x0010056c                i686_ISR108
-                0x00100575                i686_ISR109
-                0x0010057e                i686_ISR110
-                0x00100587                i686_ISR111
-                0x00100590                i686_ISR112
-                0x00100599                i686_ISR113
-                0x001005a2                i686_ISR114
-                0x001005ab                i686_ISR115
-                0x001005b4                i686_ISR116
-                0x001005bd                i686_ISR117
-                0x001005c6                i686_ISR118
-                0x001005cf                i686_ISR119
-                0x001005d8                i686_ISR120
-                0x001005e1                i686_ISR121
-                0x001005ea                i686_ISR122
-                0x001005f3                i686_ISR123
-                0x001005fc                i686_ISR124
-                0x00100605                i686_ISR125
-                0x0010060e                i686_ISR126
-                0x00100617                i686_ISR127
-                0x00100620                i686_ISR128
-                0x0010062c                i686_ISR129
-                0x00100638                i686_ISR130
-                0x00100644                i686_ISR131
-                0x00100650                i686_ISR132
-                0x0010065c                i686_ISR133
-                0x00100668                i686_ISR134
-                0x00100674                i686_ISR135
-                0x00100680                i686_ISR136
-                0x0010068c                i686_ISR137
-                0x00100698                i686_ISR138
-                0x001006a4                i686_ISR139
-                0x001006b0                i686_ISR140
-                0x001006bc                i686_ISR141
-                0x001006c8                i686_ISR142
-                0x001006d4                i686_ISR143
-                0x001006e0                i686_ISR144
-                0x001006ec                i686_ISR145
-                0x001006f8                i686_ISR146
-                0x00100704                i686_ISR147
-                0x00100710                i686_ISR148
-                0x0010071c                i686_ISR149
-                0x00100728                i686_ISR150
-                0x00100734                i686_ISR151
-                0x00100740                i686_ISR152
-                0x0010074c                i686_ISR153
-                0x00100758                i686_ISR154
-                0x00100764                i686_ISR155
-                0x00100770                i686_ISR156
-                0x0010077c                i686_ISR157
-                0x00100788                i686_ISR158
-                0x00100794                i686_ISR159
-                0x001007a0                i686_ISR160
-                0x001007ac                i686_ISR161
-                0x001007b8                i686_ISR162
-                0x001007c4                i686_ISR163
-                0x001007d0                i686_ISR164
-                0x001007dc                i686_ISR165
-                0x001007e8                i686_ISR166
-                0x001007f4                i686_ISR167
-                0x00100800                i686_ISR168
-                0x0010080c                i686_ISR169
-                0x00100818                i686_ISR170
-                0x00100824                i686_ISR171
-                0x00100830                i686_ISR172
-                0x0010083c                i686_ISR173
-                0x00100848                i686_ISR174
-                0x00100854                i686_ISR175
-                0x00100860                i686_ISR176
-                0x0010086c                i686_ISR177
-                0x00100878                i686_ISR178
-                0x00100884                i686_ISR179
-                0x00100890                i686_ISR180
-                0x0010089c                i686_ISR181
-                0x001008a8                i686_ISR182
-                0x001008b4                i686_ISR183
-                0x001008c0                i686_ISR184
-                0x001008cc                i686_ISR185
-                0x001008d8                i686_ISR186
-                0x001008e4                i686_ISR187
-                0x001008f0                i686_ISR188
-                0x001008fc                i686_ISR189
-                0x00100908                i686_ISR190
-                0x00100914                i686_ISR191
-                0x00100920                i686_ISR192
-                0x0010092c                i686_ISR193
-                0x00100938                i686_ISR194
-                0x00100944                i686_ISR195
-                0x00100950                i686_ISR196
-                0x0010095c                i686_ISR197
-                0x00100968                i686_ISR198
-                0x00100974                i686_ISR199
-                0x00100980                i686_ISR200
-                0x0010098c                i686_ISR201
-                0x00100998                i686_ISR202
-                0x001009a4                i686_ISR203
-                0x001009b0                i686_ISR204
-                0x001009bc                i686_ISR205
-                0x001009c8                i686_ISR206
-                0x001009d4                i686_ISR207
-                0x001009e0                i686_ISR208
-                0x001009ec                i686_ISR209
-                0x001009f8                i686_ISR210
-                0x00100a04                i686_ISR211
-                0x00100a10                i686_ISR212
-                0x00100a1c                i686_ISR213
-                0x00100a28                i686_ISR214
-                0x00100a34                i686_ISR215
-                0x00100a40                i686_ISR216
-                0x00100a4c                i686_ISR217
-                0x00100a58                i686_ISR218
-                0x00100a64                i686_ISR219
-                0x00100a70                i686_ISR220
-                0x00100a7c                i686_ISR221
-                0x00100a88                i686_ISR222
-                0x00100a94                i686_ISR223
-                0x00100aa0                i686_ISR224
-                0x00100aac                i686_ISR225
-                0x00100ab8                i686_ISR226
-                0x00100ac4                i686_ISR227
-                0x00100ad0                i686_ISR228
-                0x00100adc                i686_ISR229
-                0x00100ae8                i686_ISR230
-                0x00100af4                i686_ISR231
-                0x00100b00                i686_ISR232
-                0x00100b0c                i686_ISR233
-                0x00100b18                i686_ISR234
-                0x00100b24                i686_ISR235
-                0x00100b30                i686_ISR236
-                0x00100b3c                i686_ISR237
-                0x00100b48                i686_ISR238
-                0x00100b54                i686_ISR239
-                0x00100b60                i686_ISR240
-                0x00100b6c                i686_ISR241
-                0x00100b75                i686_ISR242
-                0x00100b7e                i686_ISR243
-                0x00100b87                i686_ISR244
-                0x00100b90                i686_ISR245
-                0x00100b99                i686_ISR246
-                0x00100ba2                i686_ISR247
-                0x00100bab                i686_ISR248
-                0x00100bb4                i686_ISR249
-                0x00100bbd                i686_ISR250
-                0x00100bc6                i686_ISR251
-                0x00100bcf                i686_ISR252
-                0x00100bd8                i686_ISR253
-                0x00100be1                i686_ISR254
-                0x00100bea                i686_ISR255
- .text          0x00100c1d       0x19 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
-                0x00100c1d                timer
- .text          0x00100c36       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
-                0x00100c36                memcpy
-                0x00100c88                memset
-                0x00100ccb                memcmp
- .text          0x00100d2b       0x82 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
-                0x00100d2b                pit_handler
-                0x00100d3e                pit_get_ticks
-                0x00100d48                pit_init
- .text          0x00100dad      0x4a9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
-                0x00100e46                shell_execute
- .text          0x00101256      0x915 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
-                0x00101256                putchr
-                0x00101285                putcolor
-                0x001012b7                getchr
-                0x001012d9                getcolor
-                0x001012fe                setcursor
-                0x0010136f                clrscr
-                0x001013fd                scrollback
-                0x001014eb                putc
-                0x001015fb                puts
-                0x0010162a                printf_unsigned
-                0x001016ce                printf_signed
-                0x0010172b                printf
-                0x00101ad2                print_buffer
- .text          0x00101b6b       0xe2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
-                0x00101b6b                strcmp
-                0x00101baa                strlen
-                0x00101bd1                strncmp
- .text          0x00101c4d      0x411 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
-                0x00101c4d                text_set_color
-                0x00101dc5                text_clear
-                0x00101e1d                text_putc
-                0x00101f29                text_print
- .text          0x0010205e       0x2f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
-                0x0010205e                sleep
-                0x00102080                get_ticks
- .text          0x0010208d       0x47 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
-                0x0010208d                vga_putpixel
- .text          0x001020d4       0x32 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
-                0x001020d4                HAL_Initialize
- .text          0x00102106       0x1d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
-                0x00102106                i686_GDT_Initialize
- .text          0x00102123       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
-                0x00102123                i686_IDT_SetGate
-                0x00102184                i686_IDT_EnableGate
-                0x001021a4                i686_IDT_DisableGate
-                0x001021c4                i686_IDT_Initialize
- .text          0x001021dd       0x1b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
-                0x001021dd                i686_iowait
- .text          0x001021f8       0xb0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
-                0x001021f8                i686_IRQ_Handler
-                0x0010224e                i686_IRQ_Initialize
-                0x00102295                i686_IRQ_RegisterHandler
- .text          0x001022a8      0x1a1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
-                0x001022a8                i686_ISR_Initialize
-                0x001022ea                i686_ISR_Handler
-                0x00102425                i686_ISR_RegisterHandler
- .text          0x00102449     0x1489 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
-                0x00102449                i686_ISR_InitializeGates
- .text          0x001038d2      0x233 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
-                0x00103931                keyboard_handler
-                0x00103aea                keyboard_init
- .text          0x00103b05      0x2b6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
-                0x00103b05                i686_PIC_Configure
-                0x00103bf7                i686_PIC_SendEndOfInterrupt
-                0x00103c27                i686_PIC_Disable
-                0x00103c61                i686_PIC_Mask
-                0x00103cb5                i686_PIC_Unmask
-                0x00103d0b                i686_PIC_ReadIrqRequestRegister
-                0x00103d63                i686_PIC_ReadInServiceRegister
- *fill*         0x00103dbb        0x5 
- .text          0x00103dc0      0x11a /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
-                0x00103dc0                __udivdi3
- *fill*         0x00103eda        0x6 
- .text          0x00103ee0      0x136 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
-                0x00103ee0                __umoddi3
+ .text          0x001001f0       0x25 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/gdt.obj
+                0x001001f0                i686_GDT_Load
+ *fill*         0x00100215        0xb 
+ .text          0x00100220        0xd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/idt.obj
+                0x00100220                i686_IDT_Load
+ *fill*         0x0010022d        0x3 
+ .text          0x00100230       0x48 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/io.obj
+                0x00100230                i686_outl
+                0x0010023b                i686_inl
+                0x00100244                i686_outb
+                0x0010024f                i686_inb
+                0x00100258                i686_outw
+                0x00100265                i686_inw
+                0x0010026f                i686_Panic
+                0x00100271                i686_EnableInterrupts
+                0x00100273                i686_DisableInterrupts
+                0x00100275                crash_me
+ *fill*         0x00100278        0x8 
+ .text          0x00100280      0xa6d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/asm/arch/i686/isr.obj
+                0x00100280                i686_ISR0
+                0x00100289                i686_ISR1
+                0x00100292                i686_ISR2
+                0x0010029b                i686_ISR3
+                0x001002a4                i686_ISR4
+                0x001002ad                i686_ISR5
+                0x001002b6                i686_ISR6
+                0x001002bf                i686_ISR7
+                0x001002c8                i686_ISR8
+                0x001002cf                i686_ISR9
+                0x001002d8                i686_ISR10
+                0x001002df                i686_ISR11
+                0x001002e6                i686_ISR12
+                0x001002ed                i686_ISR13
+                0x001002f4                i686_ISR14
+                0x001002fb                i686_ISR15
+                0x00100304                i686_ISR16
+                0x0010030d                i686_ISR17
+                0x00100314                i686_ISR18
+                0x0010031d                i686_ISR19
+                0x00100326                i686_ISR20
+                0x0010032f                i686_ISR21
+                0x00100336                i686_ISR22
+                0x0010033f                i686_ISR23
+                0x00100348                i686_ISR24
+                0x00100351                i686_ISR25
+                0x0010035a                i686_ISR26
+                0x00100363                i686_ISR27
+                0x0010036c                i686_ISR28
+                0x00100375                i686_ISR29
+                0x0010037e                i686_ISR30
+                0x00100387                i686_ISR31
+                0x00100390                i686_ISR32
+                0x00100399                i686_ISR33
+                0x001003a2                i686_ISR34
+                0x001003ab                i686_ISR35
+                0x001003b4                i686_ISR36
+                0x001003bd                i686_ISR37
+                0x001003c6                i686_ISR38
+                0x001003cf                i686_ISR39
+                0x001003d8                i686_ISR40
+                0x001003e1                i686_ISR41
+                0x001003ea                i686_ISR42
+                0x001003f3                i686_ISR43
+                0x001003fc                i686_ISR44
+                0x00100405                i686_ISR45
+                0x0010040e                i686_ISR46
+                0x00100417                i686_ISR47
+                0x00100420                i686_ISR48
+                0x00100429                i686_ISR49
+                0x00100432                i686_ISR50
+                0x0010043b                i686_ISR51
+                0x00100444                i686_ISR52
+                0x0010044d                i686_ISR53
+                0x00100456                i686_ISR54
+                0x0010045f                i686_ISR55
+                0x00100468                i686_ISR56
+                0x00100471                i686_ISR57
+                0x0010047a                i686_ISR58
+                0x00100483                i686_ISR59
+                0x0010048c                i686_ISR60
+                0x00100495                i686_ISR61
+                0x0010049e                i686_ISR62
+                0x001004a7                i686_ISR63
+                0x001004b0                i686_ISR64
+                0x001004b9                i686_ISR65
+                0x001004c2                i686_ISR66
+                0x001004cb                i686_ISR67
+                0x001004d4                i686_ISR68
+                0x001004dd                i686_ISR69
+                0x001004e6                i686_ISR70
+                0x001004ef                i686_ISR71
+                0x001004f8                i686_ISR72
+                0x00100501                i686_ISR73
+                0x0010050a                i686_ISR74
+                0x00100513                i686_ISR75
+                0x0010051c                i686_ISR76
+                0x00100525                i686_ISR77
+                0x0010052e                i686_ISR78
+                0x00100537                i686_ISR79
+                0x00100540                i686_ISR80
+                0x00100549                i686_ISR81
+                0x00100552                i686_ISR82
+                0x0010055b                i686_ISR83
+                0x00100564                i686_ISR84
+                0x0010056d                i686_ISR85
+                0x00100576                i686_ISR86
+                0x0010057f                i686_ISR87
+                0x00100588                i686_ISR88
+                0x00100591                i686_ISR89
+                0x0010059a                i686_ISR90
+                0x001005a3                i686_ISR91
+                0x001005ac                i686_ISR92
+                0x001005b5                i686_ISR93
+                0x001005be                i686_ISR94
+                0x001005c7                i686_ISR95
+                0x001005d0                i686_ISR96
+                0x001005d9                i686_ISR97
+                0x001005e2                i686_ISR98
+                0x001005eb                i686_ISR99
+                0x001005f4                i686_ISR100
+                0x001005fd                i686_ISR101
+                0x00100606                i686_ISR102
+                0x0010060f                i686_ISR103
+                0x00100618                i686_ISR104
+                0x00100621                i686_ISR105
+                0x0010062a                i686_ISR106
+                0x00100633                i686_ISR107
+                0x0010063c                i686_ISR108
+                0x00100645                i686_ISR109
+                0x0010064e                i686_ISR110
+                0x00100657                i686_ISR111
+                0x00100660                i686_ISR112
+                0x00100669                i686_ISR113
+                0x00100672                i686_ISR114
+                0x0010067b                i686_ISR115
+                0x00100684                i686_ISR116
+                0x0010068d                i686_ISR117
+                0x00100696                i686_ISR118
+                0x0010069f                i686_ISR119
+                0x001006a8                i686_ISR120
+                0x001006b1                i686_ISR121
+                0x001006ba                i686_ISR122
+                0x001006c3                i686_ISR123
+                0x001006cc                i686_ISR124
+                0x001006d5                i686_ISR125
+                0x001006de                i686_ISR126
+                0x001006e7                i686_ISR127
+                0x001006f0                i686_ISR128
+                0x001006fc                i686_ISR129
+                0x00100708                i686_ISR130
+                0x00100714                i686_ISR131
+                0x00100720                i686_ISR132
+                0x0010072c                i686_ISR133
+                0x00100738                i686_ISR134
+                0x00100744                i686_ISR135
+                0x00100750                i686_ISR136
+                0x0010075c                i686_ISR137
+                0x00100768                i686_ISR138
+                0x00100774                i686_ISR139
+                0x00100780                i686_ISR140
+                0x0010078c                i686_ISR141
+                0x00100798                i686_ISR142
+                0x001007a4                i686_ISR143
+                0x001007b0                i686_ISR144
+                0x001007bc                i686_ISR145
+                0x001007c8                i686_ISR146
+                0x001007d4                i686_ISR147
+                0x001007e0                i686_ISR148
+                0x001007ec                i686_ISR149
+                0x001007f8                i686_ISR150
+                0x00100804                i686_ISR151
+                0x00100810                i686_ISR152
+                0x0010081c                i686_ISR153
+                0x00100828                i686_ISR154
+                0x00100834                i686_ISR155
+                0x00100840                i686_ISR156
+                0x0010084c                i686_ISR157
+                0x00100858                i686_ISR158
+                0x00100864                i686_ISR159
+                0x00100870                i686_ISR160
+                0x0010087c                i686_ISR161
+                0x00100888                i686_ISR162
+                0x00100894                i686_ISR163
+                0x001008a0                i686_ISR164
+                0x001008ac                i686_ISR165
+                0x001008b8                i686_ISR166
+                0x001008c4                i686_ISR167
+                0x001008d0                i686_ISR168
+                0x001008dc                i686_ISR169
+                0x001008e8                i686_ISR170
+                0x001008f4                i686_ISR171
+                0x00100900                i686_ISR172
+                0x0010090c                i686_ISR173
+                0x00100918                i686_ISR174
+                0x00100924                i686_ISR175
+                0x00100930                i686_ISR176
+                0x0010093c                i686_ISR177
+                0x00100948                i686_ISR178
+                0x00100954                i686_ISR179
+                0x00100960                i686_ISR180
+                0x0010096c                i686_ISR181
+                0x00100978                i686_ISR182
+                0x00100984                i686_ISR183
+                0x00100990                i686_ISR184
+                0x0010099c                i686_ISR185
+                0x001009a8                i686_ISR186
+                0x001009b4                i686_ISR187
+                0x001009c0                i686_ISR188
+                0x001009cc                i686_ISR189
+                0x001009d8                i686_ISR190
+                0x001009e4                i686_ISR191
+                0x001009f0                i686_ISR192
+                0x001009fc                i686_ISR193
+                0x00100a08                i686_ISR194
+                0x00100a14                i686_ISR195
+                0x00100a20                i686_ISR196
+                0x00100a2c                i686_ISR197
+                0x00100a38                i686_ISR198
+                0x00100a44                i686_ISR199
+                0x00100a50                i686_ISR200
+                0x00100a5c                i686_ISR201
+                0x00100a68                i686_ISR202
+                0x00100a74                i686_ISR203
+                0x00100a80                i686_ISR204
+                0x00100a8c                i686_ISR205
+                0x00100a98                i686_ISR206
+                0x00100aa4                i686_ISR207
+                0x00100ab0                i686_ISR208
+                0x00100abc                i686_ISR209
+                0x00100ac8                i686_ISR210
+                0x00100ad4                i686_ISR211
+                0x00100ae0                i686_ISR212
+                0x00100aec                i686_ISR213
+                0x00100af8                i686_ISR214
+                0x00100b04                i686_ISR215
+                0x00100b10                i686_ISR216
+                0x00100b1c                i686_ISR217
+                0x00100b28                i686_ISR218
+                0x00100b34                i686_ISR219
+                0x00100b40                i686_ISR220
+                0x00100b4c                i686_ISR221
+                0x00100b58                i686_ISR222
+                0x00100b64                i686_ISR223
+                0x00100b70                i686_ISR224
+                0x00100b7c                i686_ISR225
+                0x00100b88                i686_ISR226
+                0x00100b94                i686_ISR227
+                0x00100ba0                i686_ISR228
+                0x00100bac                i686_ISR229
+                0x00100bb8                i686_ISR230
+                0x00100bc4                i686_ISR231
+                0x00100bd0                i686_ISR232
+                0x00100bdc                i686_ISR233
+                0x00100be8                i686_ISR234
+                0x00100bf4                i686_ISR235
+                0x00100c00                i686_ISR236
+                0x00100c0c                i686_ISR237
+                0x00100c18                i686_ISR238
+                0x00100c24                i686_ISR239
+                0x00100c30                i686_ISR240
+                0x00100c3c                i686_ISR241
+                0x00100c45                i686_ISR242
+                0x00100c4e                i686_ISR243
+                0x00100c57                i686_ISR244
+                0x00100c60                i686_ISR245
+                0x00100c69                i686_ISR246
+                0x00100c72                i686_ISR247
+                0x00100c7b                i686_ISR248
+                0x00100c84                i686_ISR249
+                0x00100c8d                i686_ISR250
+                0x00100c96                i686_ISR251
+                0x00100c9f                i686_ISR252
+                0x00100ca8                i686_ISR253
+                0x00100cb1                i686_ISR254
+                0x00100cba                i686_ISR255
+ .text          0x00100ced       0x41 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+                0x00100ced                kmalloc
+ .text          0x00100d2e       0x19 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+                0x00100d2e                timer
+ .text          0x00100d47       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+                0x00100d47                memcpy
+                0x00100d99                memset
+                0x00100ddc                memcmp
+ .text          0x00100e3c      0x169 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+                0x00100f21                panic
+                0x00100f8c                panic_now
+ .text          0x00100fa5       0x82 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+                0x00100fa5                pit_handler
+                0x00100fb8                pit_get_ticks
+                0x00100fc2                pit_init
+ .text          0x00101027      0x61c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+                0x00101100                shell_execute
+ .text          0x00101643      0x915 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00101643                putchr
+                0x00101672                putcolor
+                0x001016a4                getchr
+                0x001016c6                getcolor
+                0x001016eb                setcursor
+                0x0010175c                clrscr
+                0x001017ea                scrollback
+                0x001018d8                putc
+                0x001019e8                puts
+                0x00101a17                printf_unsigned
+                0x00101abb                printf_signed
+                0x00101b18                printf
+                0x00101ebf                print_buffer
+ .text          0x00101f58       0xe2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+                0x00101f58                strcmp
+                0x00101f97                strlen
+                0x00101fbe                strncmp
+ .text          0x0010203a       0x4b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+                0x0010203a                backend_putc_at
+ .text          0x00102085      0x736 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+                0x00102203                term_putc
+                0x0010223d                text_set_color
+                0x00102255                text_clear
+                0x0010231d                text_putc
+                0x0010249e                text_print
+                0x001025d3                text_print_dec
+                0x0010266e                text_print_hex
+                0x001026cf                text_print_hex8
+                0x0010272b                text_scroll_up
+                0x0010274f                text_scroll_down
+                0x00102776                text_follow_cursor
+ .text          0x001027bb       0x2f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+                0x001027bb                sleep
+                0x001027dd                get_ticks
+ .text          0x001027ea       0x47 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+                0x001027ea                vga_putpixel
+ .text          0x00102831       0x32 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+                0x00102831                HAL_Initialize
+ .text          0x00102863      0x1b0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+                0x00102924                ramfs_create_file
+                0x001029c8                ramfs_init
+ .text          0x00102a13      0x18e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+                0x00102a13                vfs_register_file
+                0x00102a3b                vfs_open
+                0x00102a8a                vfs_read
+                0x00102ace                vfs_write
+                0x00102b14                vfs_close
+                0x00102b54                vfs_list
+ .text          0x00102ba1       0x1d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+                0x00102ba1                i686_GDT_Initialize
+ .text          0x00102bbe       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x00102bbe                i686_IDT_SetGate
+                0x00102c1f                i686_IDT_EnableGate
+                0x00102c3f                i686_IDT_DisableGate
+                0x00102c5f                i686_IDT_Initialize
+ .text          0x00102c78       0x1b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+                0x00102c78                i686_iowait
+ .text          0x00102c93       0xb0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+                0x00102c93                i686_IRQ_Handler
+                0x00102ce9                i686_IRQ_Initialize
+                0x00102d30                i686_IRQ_RegisterHandler
+ .text          0x00102d43      0x1a1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+                0x00102d43                i686_ISR_Initialize
+                0x00102d85                i686_ISR_Handler
+                0x00102ec0                i686_ISR_RegisterHandler
+ .text          0x00102ee4     0x1489 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+                0x00102ee4                i686_ISR_InitializeGates
+ .text          0x0010436d      0x276 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+                0x001043df                keyboard_handler
+                0x001045c8                keyboard_init
+ .text          0x001045e3      0x259 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+                0x001045e3                pci_get_bar0
+                0x00104616                pci_read_dword
+                0x0010468b                pci_read_word
+                0x001046e1                pci_scan
+ .text          0x0010483c      0x2b6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+                0x0010483c                i686_PIC_Configure
+                0x0010492e                i686_PIC_SendEndOfInterrupt
+                0x0010495e                i686_PIC_Disable
+                0x00104998                i686_PIC_Mask
+                0x001049ec                i686_PIC_Unmask
+                0x00104a42                i686_PIC_ReadIrqRequestRegister
+                0x00104a9a                i686_PIC_ReadInServiceRegister
+ .text          0x00104af2      0x1fe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+                0x00104b74                ata_init
+                0x00104bbd                ata_read28
+ .text          0x00104cf0      0x10c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+                0x00104cf0                arp_init
+                0x00104cfe                arp_request
+                0x00104db3                arp_handle_packet
+ .text          0x00104dfc      0x1d6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+                0x00104dfc                arp_cache_add
+                0x00104f28                arp_cache_init
+                0x00104f56                arp_lookup
+ .text          0x00104fd2      0x2be /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+                0x00104fd2                rtl8139_get_mac
+                0x001050a7                rtl8139_send
+                0x00105140                rtl8139_init
+ .text          0x00105290       0xc9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+                0x00105290                fb_init
+                0x001052c4                fb_putpixel
+                0x0010530e                fb_clear
+ .text          0x00105359       0x9a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
+                0x00105359                fb_terminal_putc
+ *fill*         0x001053f3        0xd 
+ .text          0x00105400      0x11a /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+                0x00105400                __udivdi3
+ *fill*         0x0010551a        0x6 
+ .text          0x00105520      0x136 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                0x00105520                __umoddi3
 
-.data           0x00104018       0x2e
-                0x00104018                        __data_start = .
+.data           0x00105658       0x3e
+                0x00105658                        __data_start = .
  *(.data)
- .data          0x00104018        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- .data          0x00104018        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
- .data          0x00104018        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
- .data          0x00104018        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .data          0x00104018        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
-                0x00104018                g_ScreenBuffer
- .data          0x0010401c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
- .data          0x0010401c        0x1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .data          0x0010401d        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
- .data          0x0010401d        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- .data          0x0010401d        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
- *fill*         0x0010401d        0x3 
- .data          0x00104020       0x1e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
-                0x00104020                g_GDT
-                0x00104038                g_GDTDescriptor
- *fill*         0x0010403e        0x2 
- .data          0x00104040        0x6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
-                0x00104040                g_IDTDescriptor
- .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
- .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
- .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
- .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
- .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
- .data          0x00104046        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
- .data          0x00104046        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .data          0x00104046        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+ .data          0x00105658        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+ .data          0x00105658        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .data          0x00105658        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .data          0x00105658        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .data          0x00105658        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .data          0x00105658        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .data          0x00105658        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00105658                g_ScreenBuffer
+ .data          0x0010565c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .data          0x0010565c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ .data          0x0010565c        0x5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .data          0x00105661        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .data          0x00105661        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .data          0x00105661        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ *fill*         0x00105661        0x3 
+ .data          0x00105664        0xc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ .data          0x00105670        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+ .data          0x00105670       0x1e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+                0x00105670                g_GDT
+                0x00105688                g_GDTDescriptor
+ *fill*         0x0010568e        0x2 
+ .data          0x00105690        0x6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x00105690                g_IDTDescriptor
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .data          0x00105696        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
+ .data          0x00105696        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .data          0x00105696        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.rodata         0x00104060     0x11ed
-                0x00104060                        __rodata_start = .
+.rodata         0x001056a0     0x14a3
+                0x001056a0                        __rodata_start = .
  *(.rodata)
- .rodata        0x00104060      0x32a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- *fill*         0x0010438a        0x2 
- .rodata        0x0010438c      0x9d8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .rodata        0x00104d64       0x1f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
-                0x00104d64                SCREEN_WIDTH
-                0x00104d68                SCREEN_HEIGHT
-                0x00104d6c                DEFAULT_COLOR
-                0x00104d70                g_HexChars
- *fill*         0x00104d83        0x1 
- .rodata        0x00104d84        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .rodata        0x00104d88        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- *fill*         0x00104d8c       0x14 
- .rodata        0x00104da0      0x34f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
- *fill*         0x001050ef       0x11 
- .rodata        0x00105100      0x14d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .rodata        0x001056a0      0x35e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .rodata        0x001059fe       0x52 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .rodata        0x00105a50      0xb14 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .rodata        0x00106564       0x1f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00106564                SCREEN_WIDTH
+                0x00106568                SCREEN_HEIGHT
+                0x0010656c                DEFAULT_COLOR
+                0x00106570                g_HexChars
+ *fill*         0x00106583        0x1 
+ .rodata        0x00106584        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ .rodata        0x00106588       0x14 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .rodata        0x0010659c        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .rodata        0x001065a0       0x2e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ *fill*         0x001065ce       0x12 
+ .rodata        0x001065e0      0x34f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ *fill*         0x0010692f       0x11 
+ .rodata        0x00106940      0x14d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ *fill*         0x00106a8d        0x3 
+ .rodata        0x00106a90       0x59 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .rodata        0x00106ae9       0x11 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ *fill*         0x00106afa        0x2 
+ .rodata        0x00106afc        0x6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .rodata        0x00106b02       0x41 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
 
-.eh_frame       0x00105250       0xd8
- .eh_frame      0x00105250       0x64 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .eh_frame      0x001052b4       0x74 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+.eh_frame       0x00106b44       0xd8
+ .eh_frame      0x00106b44       0x64 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .eh_frame      0x00106ba8       0x74 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.bss            0x00105340      0xd74
-                0x00105340                        __bss_start = .
+.bss            0x00106c20   0x10b8b0
+                0x00106c20                        __bss_start = .
  *(.bss)
- .bss           0x00105340        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- .bss           0x00105340        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
- .bss           0x00105340        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
- .bss           0x00105344        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .bss           0x00105344        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
-                0x00105344                g_ScreenX
-                0x00105348                g_ScreenY
- .bss           0x0010534c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
- .bss           0x0010534c        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .bss           0x00105354        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
- .bss           0x00105354        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- .bss           0x00105354        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
- .bss           0x00105354        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
- *fill*         0x00105354        0xc 
- .bss           0x00105360      0x800 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
-                0x00105360                g_IDT
- .bss           0x00105b60        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
- .bss           0x00105b60       0x40 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
-                0x00105b60                g_IRQHandlers
- .bss           0x00105ba0      0x400 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
-                0x00105ba0                g_ISRHandlers
- .bss           0x00105fa0        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
- .bss           0x00105fa0      0x108 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
- .bss           0x001060a8        0xc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
-                0x001060a8                PIC_ICW1
-                0x001060ac                PIC_ICW4
-                0x001060b0                PIC_CMD
- .bss           0x001060b4        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .bss           0x001060b4        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
-                0x001060b4                        __end = .
+ .bss           0x00106c20   0x100004 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+ .bss           0x00206c24        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .bss           0x00206c24        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .bss           0x00206c24        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .bss           0x00206c24        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .bss           0x00206c28        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .bss           0x00206c28        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00206c28                g_ScreenX
+                0x00206c2c                g_ScreenY
+ .bss           0x00206c30        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .bss           0x00206c30        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ *fill*         0x00206c30       0x10 
+ .bss           0x00206c40     0x7d0c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .bss           0x0020e94c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .bss           0x0020e94c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .bss           0x0020e94c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .bss           0x0020e94c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ *fill*         0x0020e94c       0x14 
+ .bss           0x0020e960      0x104 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+ .bss           0x0020ea64        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ *fill*         0x0020ea64       0x1c 
+ .bss           0x0020ea80      0x800 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x0020ea80                g_IDT
+ .bss           0x0020f280        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .bss           0x0020f280       0x40 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+                0x0020f280                g_IRQHandlers
+ .bss           0x0020f2c0      0x400 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+                0x0020f2c0                g_ISRHandlers
+ .bss           0x0020f6c0        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .bss           0x0020f6c0      0x108 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .bss           0x0020f7c8        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .bss           0x0020f7c8        0xc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+                0x0020f7c8                PIC_ICW1
+                0x0020f7cc                PIC_ICW4
+                0x0020f7d0                PIC_CMD
+ .bss           0x0020f7d4        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .bss           0x0020f7d4        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ *fill*         0x0020f7d4        0xc 
+ .bss           0x0020f7e0      0x100 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .bss           0x0020f8e0     0x2bd2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ *fill*         0x002124b2        0x2 
+ .bss           0x002124b4       0x14 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .bss           0x002124c8        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
+ .bss           0x002124d0        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .bss           0x002124d0        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                0x002124d0                        __end = .
 OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
 
-.debug_info     0x00000000     0x30db
- .debug_info    0x00000000      0x23d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- .debug_info    0x0000023d      0x1e8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
- .debug_info    0x00000425      0x233 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
- .debug_info    0x00000658      0x1dd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .debug_info    0x00000835      0x54c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
- .debug_info    0x00000d81      0x111 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
- .debug_info    0x00000e92      0x287 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .debug_info    0x00001119       0xd1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
- .debug_info    0x000011ea       0xce /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- .debug_info    0x000012b8       0xde /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
- .debug_info    0x00001396      0x1fa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
- .debug_info    0x00001590      0x24e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
- .debug_info    0x000017de       0xac /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
- .debug_info    0x0000188a      0x2d0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
- .debug_info    0x00001b5a      0x29c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
- .debug_info    0x00001df6      0xd09 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_info    0x00002aff      0x375 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
- .debug_info    0x00002e74      0x267 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+.debug_info     0x00000000     0x502e
+ .debug_info    0x00000000       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+ .debug_info    0x000000f5      0x35b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_info    0x00000450      0x1e8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_info    0x00000638      0x233 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .debug_info    0x0000086b      0x233 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_info    0x00000a9e      0x3c7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_info    0x00000e65      0x54c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_info    0x000013b1      0x111 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_info    0x000014c2       0xf7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ .debug_info    0x000015b9      0x492 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .debug_info    0x00001a4b       0xd1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_info    0x00001b1c       0xce /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_info    0x00001bea       0xde /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_info    0x00001cc8      0x388 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ .debug_info    0x00002050      0x340 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+ .debug_info    0x00002390      0x1fa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_info    0x0000258a      0x24e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_info    0x000027d8       0xac /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_info    0x00002884      0x2d0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_info    0x00002b54      0x29c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_info    0x00002df0      0xd09 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_info    0x00003af9      0x39f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_info    0x00003e98      0x283 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .debug_info    0x0000411b      0x267 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .debug_info    0x00004382      0x207 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .debug_info    0x00004589      0x294 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .debug_info    0x0000481d      0x22b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .debug_info    0x00004a48      0x31b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .debug_info    0x00004d63      0x1af /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .debug_info    0x00004f12      0x11c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
 
-.debug_abbrev   0x00000000     0x132e
- .debug_abbrev  0x00000000      0x13c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- .debug_abbrev  0x0000013c       0xe2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
- .debug_abbrev  0x0000021e      0x113 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
- .debug_abbrev  0x00000331      0x175 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .debug_abbrev  0x000004a6      0x1f6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
- .debug_abbrev  0x0000069c       0xb0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
- .debug_abbrev  0x0000074c      0x14d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .debug_abbrev  0x00000899       0xa7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
- .debug_abbrev  0x00000940       0x97 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- .debug_abbrev  0x000009d7       0x85 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
- .debug_abbrev  0x00000a5c       0xf0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
- .debug_abbrev  0x00000b4c      0x122 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
- .debug_abbrev  0x00000c6e       0x6d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
- .debug_abbrev  0x00000cdb      0x179 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
- .debug_abbrev  0x00000e54      0x150 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
- .debug_abbrev  0x00000fa4       0xbf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_abbrev  0x00001063      0x171 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
- .debug_abbrev  0x000011d4      0x15a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+.debug_abbrev   0x00000000     0x21d1
+ .debug_abbrev  0x00000000       0xa3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+ .debug_abbrev  0x000000a3      0x171 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_abbrev  0x00000214       0xe2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_abbrev  0x000002f6      0x10e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .debug_abbrev  0x00000404      0x113 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_abbrev  0x00000517      0x1e9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_abbrev  0x00000700      0x1f6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_abbrev  0x000008f6       0xb0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_abbrev  0x000009a6       0xa1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ .debug_abbrev  0x00000a47      0x1c6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .debug_abbrev  0x00000c0d       0xa7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_abbrev  0x00000cb4       0x97 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_abbrev  0x00000d4b       0x85 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_abbrev  0x00000dd0      0x191 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ .debug_abbrev  0x00000f61      0x174 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+ .debug_abbrev  0x000010d5       0xf0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_abbrev  0x000011c5      0x122 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_abbrev  0x000012e7       0x6d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_abbrev  0x00001354      0x179 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_abbrev  0x000014cd      0x150 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_abbrev  0x0000161d       0xbf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_abbrev  0x000016dc      0x18b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_abbrev  0x00001867      0x125 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .debug_abbrev  0x0000198c      0x15a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .debug_abbrev  0x00001ae6      0x132 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .debug_abbrev  0x00001c18      0x162 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .debug_abbrev  0x00001d7a      0x131 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .debug_abbrev  0x00001eab      0x17a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .debug_abbrev  0x00002025       0xfe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .debug_abbrev  0x00002123       0xae /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
 
-.debug_aranges  0x00000000      0x248
+.debug_aranges  0x00000000      0x3c8
  .debug_aranges
-                0x00000000       0x28 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+                0x00000000       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
  .debug_aranges
-                0x00000028       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+                0x00000020       0x28 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
  .debug_aranges
-                0x00000048       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+                0x00000048       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
  .debug_aranges
-                0x00000068       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+                0x00000068       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
  .debug_aranges
-                0x00000088       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00000088       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
  .debug_aranges
-                0x000000a8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+                0x000000a8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
  .debug_aranges
-                0x000000c8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+                0x000000c8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
  .debug_aranges
-                0x000000e8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+                0x000000e8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
  .debug_aranges
-                0x00000108       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+                0x00000108       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
  .debug_aranges
-                0x00000128       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+                0x00000128       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
  .debug_aranges
-                0x00000148       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+                0x00000148       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
  .debug_aranges
-                0x00000168       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x00000168       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
  .debug_aranges
-                0x00000188       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+                0x00000188       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
  .debug_aranges
-                0x000001a8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+                0x000001a8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
  .debug_aranges
-                0x000001c8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+                0x000001c8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
  .debug_aranges
-                0x000001e8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+                0x000001e8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
  .debug_aranges
-                0x00000208       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+                0x00000208       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
  .debug_aranges
-                0x00000228       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+                0x00000228       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_aranges
+                0x00000248       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_aranges
+                0x00000268       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_aranges
+                0x00000288       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_aranges
+                0x000002a8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_aranges
+                0x000002c8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .debug_aranges
+                0x000002e8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .debug_aranges
+                0x00000308       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .debug_aranges
+                0x00000328       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .debug_aranges
+                0x00000348       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .debug_aranges
+                0x00000368       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .debug_aranges
+                0x00000388       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .debug_aranges
+                0x000003a8       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
 
-.debug_rnglists
-                0x00000000       0x1a
- .debug_rnglists
-                0x00000000       0x1a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+.debug_line     0x00000000     0x20bd
+ .debug_line    0x00000000       0x6b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+ .debug_line    0x0000006b       0xe6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_line    0x00000151       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_line    0x0000021d       0x96 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .debug_line    0x000002b3       0x8c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_line    0x0000033f      0x1e7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_line    0x00000526      0x3b1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_line    0x000008d7       0xe6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_line    0x000009bd       0x6a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ .debug_line    0x00000a27      0x371 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .debug_line    0x00000d98       0x77 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_line    0x00000e0f       0x77 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_line    0x00000e86       0x85 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_line    0x00000f0b      0x137 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ .debug_line    0x00001042      0x166 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+ .debug_line    0x000011a8       0x5c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_line    0x00001204       0x89 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_line    0x0000128d       0x5e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_line    0x000012eb       0xc0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_line    0x000013ab       0xd8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_line    0x00001483      0x25f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_line    0x000016e2      0x149 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_line    0x0000182b      0x104 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .debug_line    0x0000192f      0x10f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .debug_line    0x00001a3e      0x15f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .debug_line    0x00001b9d       0xbe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .debug_line    0x00001c5b      0x174 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .debug_line    0x00001dcf      0x174 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .debug_line    0x00001f43       0xd7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .debug_line    0x0000201a       0xa3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
 
-.debug_line     0x00000000     0x134b
- .debug_line    0x00000000       0xa3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- .debug_line    0x000000a3       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
- .debug_line    0x0000016f       0x8c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
- .debug_line    0x000001fb      0x175 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .debug_line    0x00000370      0x3b1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
- .debug_line    0x00000721       0xe6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
- .debug_line    0x00000807      0x258 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .debug_line    0x00000a5f       0x77 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
- .debug_line    0x00000ad6       0x77 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- .debug_line    0x00000b4d       0x85 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
- .debug_line    0x00000bd2       0x5c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
- .debug_line    0x00000c2e       0x89 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
- .debug_line    0x00000cb7       0x5e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
- .debug_line    0x00000d15       0xc0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
- .debug_line    0x00000dd5       0xd8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
- .debug_line    0x00000ead      0x25f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_line    0x0000110c      0x130 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
- .debug_line    0x0000123c      0x10f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
-
-.debug_str      0x00000000     0x29ef
- .debug_str     0x00000000      0x177 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- .debug_str     0x00000177      0x125 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
- .debug_str     0x0000029c      0x180 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
- .debug_str     0x0000041c      0x183 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .debug_str     0x0000059f      0x24f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
- .debug_str     0x000007ee       0x88 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
- .debug_str     0x00000876      0x15c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .debug_str     0x000009d2       0xfc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
- .debug_str     0x00000ace       0xea /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- .debug_str     0x00000bb8      0x14e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
- .debug_str     0x00000d06      0x2fa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
- .debug_str     0x00001000      0x291 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
- .debug_str     0x00001291       0xf6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
- .debug_str     0x00001387      0x22e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
- .debug_str     0x000015b5      0x1cb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
- .debug_str     0x00001780      0xd5e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_str     0x000024de      0x23e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
- .debug_str     0x0000271c      0x2d3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+.debug_str      0x00000000     0x3d3b
+ .debug_str     0x00000000       0xfb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+ .debug_str     0x000000fb      0x1fd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_str     0x000002f8      0x125 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_str     0x0000041d      0x185 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .debug_str     0x000005a2      0x180 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_str     0x00000722      0x22e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_str     0x00000950      0x24f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_str     0x00000b9f       0x88 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_str     0x00000c27       0xfb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ .debug_str     0x00000d22      0x256 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .debug_str     0x00000f78       0xfc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_str     0x00001074       0xea /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_str     0x0000115e      0x14e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_str     0x000012ac      0x1d5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ .debug_str     0x00001481      0x1a7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+ .debug_str     0x00001628      0x2fa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_str     0x00001922      0x291 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_str     0x00001bb3       0xf6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_str     0x00001ca9      0x22e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_str     0x00001ed7      0x1cb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_str     0x000020a2      0xd5e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_str     0x00002e00      0x280 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_str     0x00003080      0x190 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .debug_str     0x00003210      0x2d3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .debug_str     0x000034e3      0x157 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .debug_str     0x0000363a      0x1cb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .debug_str     0x00003805      0x127 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .debug_str     0x0000392c      0x1c9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .debug_str     0x00003af5      0x134 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .debug_str     0x00003c29      0x112 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
 
 .debug_line_str
-                0x00000000      0xd91
+                0x00000000     0x18b6
  .debug_line_str
-                0x00000000       0xdd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+                0x00000000       0xb0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
  .debug_line_str
-                0x000000dd       0xad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+                0x000000b0      0x132 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
  .debug_line_str
-                0x0000018a       0xbf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+                0x000001e2       0xad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
  .debug_line_str
-                0x00000249       0x8f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+                0x0000028f       0xc6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
  .debug_line_str
-                0x000002d8       0xc2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00000355       0xbf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
  .debug_line_str
-                0x0000039a       0xa9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+                0x00000414       0xcf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
  .debug_line_str
-                0x00000443       0xb6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
+                0x000004e3       0xc2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
  .debug_line_str
-                0x000004f9       0xad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+                0x000005a5       0xa9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
  .debug_line_str
-                0x000005a6       0xa4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+                0x0000064e       0xd7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
  .debug_line_str
-                0x0000064a       0xed /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+                0x00000725       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
  .debug_line_str
-                0x00000737       0xb8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+                0x0000081a       0xad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
  .debug_line_str
-                0x000007ef       0xbe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x000008c7       0xa4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
  .debug_line_str
-                0x000008ad       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+                0x0000096b       0xed /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
  .debug_line_str
-                0x00000967       0xcf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+                0x00000a58       0xe3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
  .debug_line_str
-                0x00000a36       0xd3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+                0x00000b3b       0xb9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
  .debug_line_str
-                0x00000b09       0xcd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+                0x00000bf4       0xb8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
  .debug_line_str
-                0x00000bd6       0xfe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+                0x00000cac       0xbe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
  .debug_line_str
-                0x00000cd4       0xbd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+                0x00000d6a       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_line_str
+                0x00000e24       0xcf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_line_str
+                0x00000ef3       0xd3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_line_str
+                0x00000fc6       0xcd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_line_str
+                0x00001093       0xfe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_line_str
+                0x00001191       0xde /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .debug_line_str
+                0x0000126f       0xbd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .debug_line_str
+                0x0000132c       0xfe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .debug_line_str
+                0x0000142a       0xff /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .debug_line_str
+                0x00001529       0xd6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .debug_line_str
+                0x000015ff      0x118 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .debug_line_str
+                0x00001717       0xc2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .debug_line_str
+                0x000017d9       0xdd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
 
-.comment        0x00000000      0x17c
- .comment       0x00000000       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- .comment       0x00000013       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
- .comment       0x00000026       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
- .comment       0x00000039       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .comment       0x0000004c       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
- .comment       0x0000005f       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
- .comment       0x00000072       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .comment       0x00000085       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
- .comment       0x00000098       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- .comment       0x000000ab       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
- .comment       0x000000be       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
- .comment       0x000000d1       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
- .comment       0x000000e4       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
- .comment       0x000000f7       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
- .comment       0x0000010a       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
- .comment       0x0000011d       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
- .comment       0x00000130       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
- .comment       0x00000143       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
- .comment       0x00000156       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .comment       0x00000169       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+.comment        0x00000000      0x260
+ .comment       0x00000000       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+ .comment       0x00000013       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .comment       0x00000026       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .comment       0x00000039       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .comment       0x0000004c       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .comment       0x0000005f       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .comment       0x00000072       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .comment       0x00000085       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .comment       0x00000098       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ .comment       0x000000ab       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .comment       0x000000be       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .comment       0x000000d1       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .comment       0x000000e4       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .comment       0x000000f7       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ .comment       0x0000010a       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+ .comment       0x0000011d       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .comment       0x00000130       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .comment       0x00000143       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .comment       0x00000156       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .comment       0x00000169       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .comment       0x0000017c       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .comment       0x0000018f       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .comment       0x000001a2       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .comment       0x000001b5       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .comment       0x000001c8       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .comment       0x000001db       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .comment       0x000001ee       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .comment       0x00000201       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .comment       0x00000214       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .comment       0x00000227       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
+ .comment       0x0000023a       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .comment       0x0000024d       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.debug_frame    0x00000000      0x948
- .debug_frame   0x00000000       0x4c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
- .debug_frame   0x0000004c       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
- .debug_frame   0x000000c0       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
- .debug_frame   0x00000134       0x94 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
- .debug_frame   0x000001c8      0x1b8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
- .debug_frame   0x00000380       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
- .debug_frame   0x000003f4      0x104 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/text.obj
- .debug_frame   0x000004f8       0x54 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
- .debug_frame   0x0000054c       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
- .debug_frame   0x00000580       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
- .debug_frame   0x000005b4       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
- .debug_frame   0x000005e8       0x94 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
- .debug_frame   0x0000067c       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
- .debug_frame   0x000006b0       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
- .debug_frame   0x00000724       0x80 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
- .debug_frame   0x000007a4       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
- .debug_frame   0x000007d8       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
- .debug_frame   0x0000084c       0xfc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+.debug_frame    0x00000000     0x1034
+ .debug_frame   0x00000000       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+ .debug_frame   0x00000034       0x4c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_frame   0x00000080       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+ .debug_frame   0x000000f4       0x6c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+ .debug_frame   0x00000160       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+ .debug_frame   0x000001d4       0xd4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+ .debug_frame   0x000002a8      0x1b8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+ .debug_frame   0x00000460       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+ .debug_frame   0x000004d4       0x38 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+ .debug_frame   0x0000050c      0x1f8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+ .debug_frame   0x00000704       0x54 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+ .debug_frame   0x00000758       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+ .debug_frame   0x0000078c       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+ .debug_frame   0x000007c0       0xb4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+ .debug_frame   0x00000874       0xd4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+ .debug_frame   0x00000948       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+ .debug_frame   0x0000097c       0x94 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+ .debug_frame   0x00000a10       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+ .debug_frame   0x00000a44       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+ .debug_frame   0x00000ab8       0x80 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+ .debug_frame   0x00000b38       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+ .debug_frame   0x00000b6c       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+ .debug_frame   0x00000be0       0x9c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+ .debug_frame   0x00000c7c       0xfc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+ .debug_frame   0x00000d78       0x98 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .debug_frame   0x00000e10       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .debug_frame   0x00000e84       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .debug_frame   0x00000ef8       0x94 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .debug_frame   0x00000f8c       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .debug_frame   0x00001000       0x34 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
+
+.debug_rnglists
+                0x00000000       0x31
+ .debug_rnglists
+                0x00000000       0x1a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+ .debug_rnglists
+                0x0000001a       0x17 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj

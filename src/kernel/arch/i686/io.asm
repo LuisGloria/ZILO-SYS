@@ -1,3 +1,18 @@
+global i686_outl
+i686_outl:
+    [bits 32]
+    mov dx, [esp + 4]   ; port
+    mov eax, [esp + 8]  ; value
+    out dx, eax
+    ret
+
+global i686_inl
+i686_inl:
+    [bits 32]
+    mov dx, [esp + 4]
+    xor eax, eax
+    in eax, dx
+    ret
 
 global i686_outb
 i686_outb:
@@ -13,6 +28,22 @@ i686_inb:
     mov dx, [esp + 4]
     xor eax, eax
     in al, dx
+    ret
+
+global i686_outw
+i686_outw:
+    [bits 32]
+    mov dx, [esp + 4]
+    mov ax, [esp + 8]
+    out dx, ax
+    ret
+
+global i686_inw
+i686_inw:
+    [bits 32]
+    mov dx, [esp + 4]
+    xor eax, eax
+    in ax, dx
     ret
 
 global i686_Panic
@@ -37,4 +68,4 @@ crash_me:
     ; mov eax, 0
     ; div eax
     int 0x80
-    ret
+    ret ; I don't think this was ever used

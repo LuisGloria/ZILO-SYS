@@ -1,13 +1,15 @@
 #pragma once
 #include <stdint.h>
 
-typedef struct 
+typedef struct
 {
-    // in the reverse order they are pushed:
-    uint32_t ds;                                            // data segment pushed by us
-    uint32_t edi, esi, ebp, useless, ebx, edx, ecx, eax;    // pusha
-    uint32_t interrupt, error;                              // we push interrupt, error is pushed automatically (or our dummy)
-    uint32_t eip, cs, eflags, esp, ss;                      // pushed automatically by CPU
+    uint32_t ds;
+    uint32_t edi, esi, ebp, esp, ebx, edx, ecx, eax;
+
+    uint32_t interrupt;
+    uint32_t error;
+
+    uint32_t eip, cs, eflags, useresp, ss;
 } __attribute__((packed)) Registers;
 
 typedef void (*ISRHandler)(Registers* regs);
