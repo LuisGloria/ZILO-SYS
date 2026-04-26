@@ -13,15 +13,16 @@ typedef struct {
 } cell_t;
 
 static cell_t buffer[TERM_SCROLLBACK][TERM_W];
-static int scroll_offset = 0; // top of visible window
+static int scroll_offset = 0;
 static int cursor_row = 0;
 static int cursor_col = 0;
 
 static int mode = 1;
-// 0 = VGA text
-// 1 = framebuffer
 
 static uint8_t current_color = 0x0F;
+
+//dirty flag
+static int dirty = 1;
 
 static inline void clamp_cursor()
 {
@@ -39,7 +40,6 @@ static void text_update_cursor()
 {
     int screen_y = cursor_row - scroll_offset;
 
-    // only show cursor if it's in visible window
     if (screen_y < 0 || screen_y >= TERM_H)
         return;
 
@@ -54,6 +54,9 @@ static void text_update_cursor()
 
 static void text_redraw()
 {
+    if (!dirty)
+        return;
+
     for (int y = 0; y < TERM_H; y++)
     {
         int buf_y = y + scroll_offset;
@@ -69,6 +72,7 @@ static void text_redraw()
     }
 
     text_update_cursor();
+    dirty = 0;
 }
 
 void term_putc(char c)
@@ -100,6 +104,7 @@ void text_clear()
     cursor_col = 0;
     scroll_offset = 0;
 
+    dirty = 1;
     text_redraw();
 }
 
@@ -111,10 +116,11 @@ static void text_scroll()
         if (scroll_offset < TERM_SCROLLBACK - TERM_H)
             scroll_offset++;
     }
-    text_redraw();
+
+    dirty = 1;
 }
 
-// put char (buffer + vga)
+// put char (buffer only)
 void text_putc(char c)
 {
     if (c == '\n')
@@ -128,7 +134,8 @@ void text_putc(char c)
         if (cursor_row - scroll_offset >= TERM_H)
             text_scroll();
 
-        text_redraw();
+        dirty = 1;
+        text_update_cursor();
         return;
     }
 
@@ -140,14 +147,29 @@ void text_putc(char c)
 
             buffer[cursor_row][cursor_col].c = ' ';
             buffer[cursor_row][cursor_col].color = current_color;
+
+            int screen_y = cursor_row - scroll_offset;
+
+            if (screen_y >= 0 && screen_y < TERM_H)
+            {
+                backend_putc_at(screen_y, cursor_col, ' ', current_color);
+            }
         }
 
-        text_redraw();
+        dirty = 1;
+        text_update_cursor();
         return;
     }
 
     buffer[cursor_row][cursor_col].c = c;
     buffer[cursor_row][cursor_col].color = current_color;
+
+    int screen_y = cursor_row - scroll_offset;
+
+    if (screen_y >= 0 && screen_y < TERM_H)
+    {
+        backend_putc_at(screen_y, cursor_col, c, current_color);
+    }
 
     cursor_col++;
 
@@ -163,8 +185,9 @@ void text_putc(char c)
     if (cursor_row - scroll_offset >= TERM_H)
         text_scroll();
 
-    text_redraw();
     clamp_cursor();
+    text_update_cursor();
+    dirty = 1;
 }
 
 // print string
@@ -199,6 +222,8 @@ void text_print(const char* str)
 
         text_putc(str[i]);
     }
+
+    text_redraw(); // redraw once after full string
 }
 
 // print decimal
@@ -210,6 +235,7 @@ void text_print_dec(uint32_t value)
     if (value == 0)
     {
         text_putc('0');
+        text_redraw();
         return;
     }
 
@@ -221,6 +247,41 @@ void text_print_dec(uint32_t value)
 
     for (int j = i - 1; j >= 0; j--)
         text_putc(buf[j]);
+
+    text_redraw();
+}
+
+void text_print_int(int value)
+{
+    char buf[16];
+    int i = 0;
+    int is_negative = 0;
+
+    if (value == 0)
+    {
+        text_putc('0');
+        return;
+    }
+
+    if (value < 0)
+    {
+        is_negative = 1;
+        value = -value;
+    }
+
+    while (value > 0 && i < 15)
+    {
+        buf[i++] = '0' + (value % 10);
+        value /= 10;
+    }
+
+    if (is_negative)
+        text_putc('-');
+
+    while (i--)
+        text_putc(buf[i]);
+
+    text_redraw();
 }
 
 // print hex
@@ -235,6 +296,8 @@ void text_print_hex(uint32_t value)
         uint8_t digit = (value >> i) & 0xF;
         text_putc(hex[digit]);
     }
+
+    text_redraw();
 }
 
 void text_print_hex8(uint8_t value)
@@ -243,6 +306,8 @@ void text_print_hex8(uint8_t value)
 
     text_putc(hex[(value >> 4) & 0xF]);
     text_putc(hex[value & 0xF]);
+
+    text_redraw();
 }
 
 void text_scroll_up()
@@ -250,6 +315,7 @@ void text_scroll_up()
     if (scroll_offset > 0)
         scroll_offset--;
 
+    dirty = 1;
     text_redraw();
 }
 
@@ -258,6 +324,7 @@ void text_scroll_down()
     if (scroll_offset < TERM_SCROLLBACK - TERM_H)
         scroll_offset++;
 
+    dirty = 1;
     text_redraw();
 }
 
@@ -269,5 +336,25 @@ void text_follow_cursor()
     if (cursor_row >= scroll_offset + TERM_H)
         scroll_offset = cursor_row - TERM_H + 1;
 
+    dirty = 1;
     text_redraw();
 }
+
+// Colors
+//
+// $00 Black
+// $01 Blue
+// $02 Green
+// $03 Cyan
+// $04 Red
+// $05 Magenta
+// $06 Brown
+// $07 White
+// $08 Gray
+// $09 Light Blue
+// $0A Light Green
+// $0B Light Cyan
+// $0C Light Red
+// $0D Light Magenta
+// $0E Yellow
+// $0F Bright White

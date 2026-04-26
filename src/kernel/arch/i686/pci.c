@@ -32,7 +32,7 @@ uint16_t pci_read_word(uint8_t bus, uint8_t slot, uint8_t func, uint8_t offset)
 
 void pci_scan()
 {
-    text_print("Scanning PCI...\n");
+    text_print("[{0x08}PCI{0x0F}]         Scanning PCI...\n");
 
     for (uint16_t bus = 0; bus < 256; bus++)
     {
@@ -45,7 +45,7 @@ void pci_scan()
 
             uint16_t device = pci_read_word(bus, slot, 0, 0x02);
 
-            text_print("PCI: bus=");
+            text_print("[{0x08}PCI{0x0F}]         PCI: bus=");
             text_print_dec(bus);
 
             text_print(" slot=");
@@ -62,7 +62,7 @@ void pci_scan()
             // Detect RTL8139 specifically
             if (vendor == 0x10EC && device == 0x8139)
             {
-                printf("RTL8139 FOUND at bus=%d slot=%d\n", bus, slot);
+                printf("[{0x08}PCI{0x0F}]         RTL8139 FOUND at bus=%d slot=%d\n", bus, slot);
             }
         }
     }

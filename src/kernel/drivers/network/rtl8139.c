@@ -32,7 +32,7 @@ static void rtl8139_print_mac()
     for (int i = 0; i < 6; i++)
         mac[i] = i686_inb(io_base + i);
 
-    text_print("MAC: ");
+    text_print("[{0x08}RTL8139{0x0F}]     MAC: ");
 
     for (int i = 0; i < 6; i++)
     {
@@ -65,7 +65,7 @@ int rtl8139_init(uint8_t bus, uint8_t slot)
     uint32_t bar0 = pci_get_bar0(bus, slot, 0);
     io_base = bar0 & ~0x3; // mask flags
 
-    text_print("RTL8139 IO BASE: ");
+    text_print("[{0x08}RTL8139{0x0F}]     RTL8139 IO BASE: ");
     text_print_hex(io_base);
     text_print("\n");
 
@@ -75,7 +75,7 @@ int rtl8139_init(uint8_t bus, uint8_t slot)
     i686_outb(io_base + RTL_CMD, 0x10);
     while (i686_inb(io_base + RTL_CMD) & 0x10);
 
-    text_print("RTL8139 reset OK\n");
+    text_print("[{0x08}RTL8139{0x0F}]     RTL8139 reset OK\n");
 
     // Set RX buffer
     i686_outl(io_base + RTL_RBSTART, (uint32_t)rx_buffer);
@@ -83,10 +83,10 @@ int rtl8139_init(uint8_t bus, uint8_t slot)
     // Enable RX + TX
     i686_outb(io_base + RTL_CMD, 0x0C);
 
-    // Accept all packets (promiscuous for now)
+    // Accept all packets
     i686_outl(io_base + RTL_RCR, 0xF | (1 << 7));
 
-    text_print("RTL8139 initialized\n");
+    text_print("[{0x08}RTL8139{0x0F}]     RTL8139 initialized\n");
     rtl8139_print_mac();
 
     return 0;

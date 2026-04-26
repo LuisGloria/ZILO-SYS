@@ -4,14 +4,8 @@
 This OS has been inspired on the mainframe systems like z/OS && VM/ESA for example,
 The bootloader and kernel are originally from [nanobyte_os](https://github.com/nanobyte-dev/nanobyte_os/), but with my own aditions and libs.
 
-## New in version 1.4:
-* RTL8139 driver
-* ARP
-* Kernel Panic
-* Vfs/RAMFS
-* ATA
-* Framebuffer
-* Fixed lib paths
+## New in version 1.5:
+* A lot...
 
 * Note, this is still a beta OS, might be unstable, things may and will change and it's more of a hobby project rather than an actual usable system.
 
@@ -64,3 +58,5 @@ $ sudo dnf install gcc gcc-c++ make bison flex gmp-devel libmpc-devel mpfr-devel
 # IMPORTANT!
 
 Once again, this OS has [nanobyte_os](https://github.com/nanobyte-dev/nanobyte_os/) code at it's core, go support nanobyte :3
+
+Also, if you're gonna contribute, do NOT delete the thingamabob, it is very import and it looks for the doodab, and the kernel needs his doodab.

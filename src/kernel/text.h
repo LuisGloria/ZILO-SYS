@@ -8,6 +8,7 @@ void text_putc(char c);
 void text_print(const char* str);
 
 void text_write(const char* str, uint8_t color);   // force color print
+void text_print_int(int value);
 void text_print_hex(uint32_t value);               // debug helper
 void text_print_dec(uint32_t value);               // debug helper
 void text_print_hex8(uint8_t value);

@@ -34,7 +34,7 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
  .entry         0x00000500       0xc0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/asm/entry.obj
                 0x00000500                entry
 
-.text           0x000005c0     0x1d96
+.text           0x000005c0     0x1db6
                 0x000005c0                        __text_start = .
  *(.text)
  .text          0x000005c0      0x24e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/asm/x86.obj
@@ -65,91 +65,91 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x000012e5                FAT_Open
  .text          0x00001432       0xf2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/main.obj
                 0x00001432                start
- .text          0x00001524      0x119 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
+ .text          0x00001524      0x12f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
                 0x00001524                Memory_Detect
- .text          0x0000163d       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memory.obj
-                0x0000163d                memcpy
-                0x0000168f                memset
-                0x000016d2                memcmp
- .text          0x00001732      0x915 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
-                0x00001732                putchr
-                0x00001761                putcolor
-                0x00001793                getchr
-                0x000017b5                getcolor
-                0x000017da                setcursor
-                0x0000184b                clrscr
-                0x000018d9                scrollback
-                0x000019c7                putc
-                0x00001ad7                puts
-                0x00001b06                printf_unsigned
-                0x00001baa                printf_signed
-                0x00001c07                printf
-                0x00001fae                print_buffer
- .text          0x00002047       0xb6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
-                0x00002047                strchr
-                0x00002085                strcpy
-                0x000020d7                strlen
- *fill*         0x000020fd        0x3 
- .text          0x00002100      0x11a /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
-                0x00002100                __udivdi3
- *fill*         0x0000221a        0x6 
- .text          0x00002220      0x136 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
-                0x00002220                __umoddi3
+ .text          0x00001653       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memory.obj
+                0x00001653                memcpy
+                0x000016a5                memset
+                0x000016e8                memcmp
+ .text          0x00001748      0x915 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
+                0x00001748                putchr
+                0x00001777                putcolor
+                0x000017a9                getchr
+                0x000017cb                getcolor
+                0x000017f0                setcursor
+                0x00001861                clrscr
+                0x000018ef                scrollback
+                0x000019dd                putc
+                0x00001aed                puts
+                0x00001b1c                printf_unsigned
+                0x00001bc0                printf_signed
+                0x00001c1d                printf
+                0x00001fc4                print_buffer
+ .text          0x0000205d       0xb6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
+                0x0000205d                strchr
+                0x0000209b                strcpy
+                0x000020ed                strlen
+ *fill*         0x00002113        0xd 
+ .text          0x00002120      0x11a /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+                0x00002120                __udivdi3
+ *fill*         0x0000223a        0x6 
+ .text          0x00002240      0x136 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                0x00002240                __umoddi3
 
-.data           0x00002358        0xc
-                0x00002358                        __data_start = .
+.data           0x00002378        0xc
+                0x00002378                        __data_start = .
  *(.data)
- .data          0x00002358        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/ctype.obj
- .data          0x00002358        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/disk.obj
- .data          0x00002358        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/fat.obj
- .data          0x00002358        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/main.obj
-                0x00002358                KernelLoadBuffer
-                0x0000235c                Kernel
- .data          0x00002360        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
- .data          0x00002360        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memory.obj
- .data          0x00002360        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
-                0x00002360                g_ScreenBuffer
- .data          0x00002364        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
- .data          0x00002364        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .data          0x00002364        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+ .data          0x00002378        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/ctype.obj
+ .data          0x00002378        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/disk.obj
+ .data          0x00002378        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/fat.obj
+ .data          0x00002378        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/main.obj
+                0x00002378                KernelLoadBuffer
+                0x0000237c                Kernel
+ .data          0x00002380        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
+ .data          0x00002380        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memory.obj
+ .data          0x00002380        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
+                0x00002380                g_ScreenBuffer
+ .data          0x00002384        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
+ .data          0x00002384        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .data          0x00002384        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.rodata         0x00002364      0x197
-                0x00002364                        __rodata_start = .
+.rodata         0x00002384      0x197
+                0x00002384                        __rodata_start = .
  *(.rodata)
- .rodata        0x00002364      0x11b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/fat.obj
- .rodata        0x0000247f       0x2f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/main.obj
- *fill*         0x000024ae        0x2 
- .rodata        0x000024b0       0x2b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
- *fill*         0x000024db        0x1 
- .rodata        0x000024dc       0x1f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
-                0x000024dc                SCREEN_WIDTH
-                0x000024e0                SCREEN_HEIGHT
-                0x000024e4                DEFAULT_COLOR
-                0x000024e8                g_HexChars
+ .rodata        0x00002384      0x11b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/fat.obj
+ .rodata        0x0000249f       0x2f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/main.obj
+ *fill*         0x000024ce        0x2 
+ .rodata        0x000024d0       0x2b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
+ *fill*         0x000024fb        0x1 
+ .rodata        0x000024fc       0x1f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
+                0x000024fc                SCREEN_WIDTH
+                0x00002500                SCREEN_HEIGHT
+                0x00002504                DEFAULT_COLOR
+                0x00002508                g_HexChars
 
-.eh_frame       0x000024fc       0xd8
- .eh_frame      0x000024fc       0x64 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .eh_frame      0x00002560       0x74 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+.eh_frame       0x0000251c       0xd8
+ .eh_frame      0x0000251c       0x64 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .eh_frame      0x00002580       0x74 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.bss            0x000025e0     0x182c
-                0x000025e0                        __bss_start = .
+.bss            0x00002600     0x182c
+                0x00002600                        __bss_start = .
  *(.bss)
- .bss           0x000025e0        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/ctype.obj
- .bss           0x000025e0        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/disk.obj
- .bss           0x000025e0        0xc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/fat.obj
- .bss           0x000025ec        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/main.obj
- *fill*         0x000025ec       0x14 
- .bss           0x00002600     0x1804 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
-                0x00002600                g_MemRegions
-                0x00003e00                g_MemRegionCount
- .bss           0x00003e04        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memory.obj
- .bss           0x00003e04        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
-                0x00003e04                g_ScreenX
-                0x00003e08                g_ScreenY
- .bss           0x00003e0c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
- .bss           0x00003e0c        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .bss           0x00003e0c        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
-                0x00003e0c                        __end = .
+ .bss           0x00002600        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/ctype.obj
+ .bss           0x00002600        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/disk.obj
+ .bss           0x00002600        0xc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/fat.obj
+ .bss           0x0000260c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/main.obj
+ *fill*         0x0000260c       0x14 
+ .bss           0x00002620     0x1804 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
+                0x00002620                g_MemRegions
+                0x00003e20                g_MemRegionCount
+ .bss           0x00003e24        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memory.obj
+ .bss           0x00003e24        0x8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
+                0x00003e24                g_ScreenX
+                0x00003e28                g_ScreenY
+ .bss           0x00003e2c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
+ .bss           0x00003e2c        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .bss           0x00003e2c        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+                0x00003e2c                        __end = .
 OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2.bin binary)
 
 .debug_info     0x00000000     0x1a66
@@ -190,15 +190,15 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2.bin binary)
  .debug_aranges
                 0x000000e0       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
 
-.debug_line     0x00000000      0xcf0
+.debug_line     0x00000000      0xcf4
  .debug_line    0x00000000       0x81 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/ctype.obj
  .debug_line    0x00000081       0xea /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/disk.obj
  .debug_line    0x0000016b      0x4fe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/fat.obj
  .debug_line    0x00000669       0xbb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/main.obj
- .debug_line    0x00000724       0xbc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
- .debug_line    0x000007e0       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memory.obj
- .debug_line    0x000008ac      0x3ad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
- .debug_line    0x00000c59       0x97 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
+ .debug_line    0x00000724       0xc0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memdetect.obj
+ .debug_line    0x000007e4       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/memory.obj
+ .debug_line    0x000008b0      0x3ad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/stdio.obj
+ .debug_line    0x00000c5d       0x97 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/string.obj
 
 .debug_str      0x00000000     0x1088
  .debug_str     0x00000000       0xea /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/stage2/c/ctype.obj

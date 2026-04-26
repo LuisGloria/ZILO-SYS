@@ -6,3 +6,4 @@ void panic(const char* message, Registers* regs);
 
 // optional helper for forced crashes cuz' why not?
 void panic_now(const char* message);
+void panic_now_silent(const char* message);

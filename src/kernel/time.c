@@ -8,7 +8,7 @@ void sleep(uint32_t ms)
     // assuming PIT is 1000 Hz → 1 tick = 1 ms
     while ((pit_get_ticks() - start) < ms)
     {
-        // halt CPU until next interrupt (saves power + cleaner)
+        // halt CPU until next interrupt
         __asm__ volatile ("hlt"); // Might be broken...?
     }
 }

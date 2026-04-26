@@ -37,7 +37,7 @@ void arp_cache_add(uint32_t ip, uint8_t mac[6])
         }
     }
 
-    // simple overwrite
+    // overwrite
     cache[0].used = 1;
     cache[0].ip = ip;
 
