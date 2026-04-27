@@ -7,7 +7,7 @@
 #include "power.h"
 #include "arch/i686/pci.h"
 #include "drivers/block/ata.h"
-//#include "drivers/audio/sb16.h"
+#include "drivers/audio/sb16.h"
 #include "drivers/audio/speakers.h"
 #include "fs/dataset.h"
 #include "bin/zedit.h"
@@ -117,9 +117,9 @@ retc_t shell_execute(const char* cmdline)
 
         return RETC_OK;
     }
-    else if (strcmp(cmd, "beeptest") == 0)
+    else if (strcmp(cmd, "sb16test") == 0)
     {
-        speaker_beep(200, 300);
+        play_tetris_theme();
         return RETC_OK;
     }
     else if (strcmp(cmd, "cat") == 0)

@@ -5,6 +5,7 @@
 #include "stdio.h"
 #include "panic.h"
 #include "memory.h"
+#include "syscall.h"
 #include "hal/hal.h"
 #include "memdetect.h"
 #include "vfs/ramfs.h"
@@ -14,8 +15,11 @@
 #include "arch/i686/irq.h"
 #include "drivers/video/fb.h"
 #include "drivers/block/ata.h"
+#include "drivers/block/ahci.h"
 #include "drivers/audio/sb16.h"
 #include "drivers/network/arp.h"
+#include "drivers/mouse/mouse.h"
+#include "terminal_backend_vga.h"
 #include "drivers/audio/speakers.h"
 #include "drivers/network/rtl8139.h"
 #include "thingamabob/thingamabob.h"
@@ -37,6 +41,8 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     cmos_read_rtc(&rtc);
 
     HAL_Initialize();
+    syscall_initialize();
+    fb_init(fb_info);
     memdetect_init(boot->Memory.Regions, boot->Memory.RegionCount);
     ramfs_init();
 
@@ -49,6 +55,8 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     text_print("[{0x08}SPEAKERS{0x0F}]    Testing sound...\n");
     speaker_beep(200, 300);
     arp_init();
+    mouse_init();
+    i686_IRQ_RegisterHandler(12, mouse_handler);
 
     text_print("[{0x08}ARP{0x0F}]         Testing ARP...\n");
     arp_request(0xC0A80101); // 192.168.1.1
@@ -72,6 +80,23 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     text_print_hex8(sector[0]);
     text_print("\n");
     dataset_init();
+    ahci_init(ahci_dev.bus, ahci_dev.slot, ahci_dev.func);
+    text_print("[{0x08}FB{0x0F}]          addr=");
+    text_print_hex((uint32_t)fb_info->addr);
+
+    text_print("\n              width=");
+    text_print_dec(fb_info->width);
+
+    text_print("\n              height=");
+    text_print_dec(fb_info->height);
+
+    text_print("\n              pitch=");
+    text_print_dec(fb_info->pitch);
+
+    text_print("\n              bpp=");
+    text_print_dec(fb_info->bpp);
+
+    text_print("\n");
     text_print("[{0x08}CMOS{0x0F}]        Found time in CMOS clock battery.\n");
     text_print("[{0x08}CMOS{0x0F}]        RTC Time: ");
     text_print_dec(rtc.hour);
@@ -102,13 +127,12 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     text_print("{0x09} SS          SS       YY      SS          SS \n");
     text_print("{0x09}  SSSSSSSSSSSS        YY       SSSSSSSSSSSS  \n");
     text_print("{0x0F}\n");
-    text_print("{0x0F}ZILO/SYS version 1.5b\n");
+    text_print("{0x0F}ZILO/SYS version 1.6b\n");
     text_print("{0x0F}READY.\n");
     text_print("> ");
-
+    fb_clear(0x0000FF);
+    //fb_rect(10, 10, 10, 10, 0x12);
     //i686_IRQ_RegisterHandler(0, timer);
-
-    //crash_me(); is this even used anymore?
 
     //uint8_t packet[60] = {
     //    0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,  // destination (broadcast)
@@ -119,7 +143,17 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     //    0x48,0x45,0x4C,0x4C,0x4F
     //};
 
-
 end:
-    for (;;);
+    for (;;)
+    {
+        if (mouse_updated)
+        {
+            mouse_updated = 0;
+
+            int x = mouse_get_x();
+            int y = mouse_get_y();
+
+            vga_draw_cursor(x, y);
+        }
+    }
 }

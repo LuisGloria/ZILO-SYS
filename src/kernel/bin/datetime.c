@@ -62,7 +62,7 @@ void datetime_prompt()
         int h = parse_int(input, &i);
         if (h < 0 || input[i] != ':')
         {
-            text_print("[{0x08}DATETIME{0x0F}]    Invalid time format\n");
+            text_print("[{0x08}DATETIME{0x0F}]    Invalid time format (HH:MM DD-MM-YYYY)\n");
             continue;
         }
         i++;
@@ -70,7 +70,7 @@ void datetime_prompt()
         int m = parse_int(input, &i);
         if (m < 0 || input[i] != ' ')
         {
-            text_print("[{0x08}DATETIME{0x0F}]    Invalid time format\n");
+            text_print("[{0x08}DATETIME{0x0F}]    Invalid time format (HH:MM DD-MM-YYYY)\n");
             continue;
         }
         i++;
@@ -78,7 +78,7 @@ void datetime_prompt()
         int d = parse_int(input, &i);
         if (d < 0 || input[i] != '-')
         {
-            text_print("[{0x08}DATETIME{0x0F}]    Invalid date format\n");
+            text_print("[{0x08}DATETIME{0x0F}]    Invalid date format (HH:MM DD-MM-YYYY)\n");
             continue;
         }
         i++;
@@ -86,7 +86,7 @@ void datetime_prompt()
         int mo = parse_int(input, &i);
         if (mo < 0 || input[i] != '-')
         {
-            text_print("[{0x08}DATETIME{0x0F}]    Invalid date format\n");
+            text_print("[{0x08}DATETIME{0x0F}]    Invalid date format (HH:MM DD-MM-YYYY)\n");
             continue;
         }
         i++;
@@ -94,7 +94,7 @@ void datetime_prompt()
         int y = parse_int(input, &i);
         if (y < 0)
         {
-            text_print("[{0x08}DATETIME{0x0F}]    Invalid year format\n");
+            text_print("[{0x08}DATETIME{0x0F}]    Invalid year format (HH:MM DD-MM-YYYY)\n");
             continue;
         }
 

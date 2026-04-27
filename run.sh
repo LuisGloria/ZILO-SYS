@@ -9,8 +9,11 @@ fi
 # Run QEMU
 qemu-system-i386 \
     -fda build/main_floppy.img \
+    -drive file=disk.img,format=raw,if=ide \
     -net nic,model=rtl8139 \
     -net user \
-    -drive file=disk.img,format=raw \
     -audiodev pa,id=speaker \
-    -machine pcspk-audiodev=speaker
+    -machine pcspk-audiodev=speaker \
+    -device sb16,audiodev=speaker \
+    -serial stdio \
+    -vga std

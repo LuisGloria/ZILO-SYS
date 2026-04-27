@@ -12,3 +12,4 @@ typedef struct {
 void fb_init(framebuffer_t* fb);
 void fb_putpixel(int x, int y, uint32_t color);
 void fb_clear(uint32_t color);
+void fb_rect(int x, int y, int w, int h, uint32_t color);

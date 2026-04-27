@@ -26,3 +26,14 @@ void fb_clear(uint32_t color)
         }
     }
 }
+
+void fb_rect(int x, int y, int w, int h, uint32_t color)
+{
+    for (int yy = y; yy < y + h; yy++)
+    {
+        for (int xx = x; xx < x + w; xx++)
+        {
+            fb_putpixel(xx, yy, color);
+        }
+    }
+}
