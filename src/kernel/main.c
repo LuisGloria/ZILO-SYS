@@ -1,5 +1,6 @@
 #include <stdint.h>
 
+
 #include "text.h"
 #include "cmos.h"
 #include "stdio.h"
@@ -9,17 +10,24 @@
 #include "hal/hal.h"
 #include "memdetect.h"
 #include "vfs/ramfs.h"
-#include "fs/dataset.h"
+#include "fs/zdsfs.h"
 #include "bin/datetime.h"
 #include "arch/i686/pci.h"
 #include "arch/i686/irq.h"
+#include "memory/paging.h"
+#include "process/process.h"
+#include "drivers/usb/usb.h"
 #include "drivers/video/fb.h"
 #include "drivers/block/ata.h"
 #include "drivers/block/ahci.h"
 #include "drivers/audio/sb16.h"
+#include "drivers/block/atapi.h"
+#include "scheduler/scheduler.h"
 #include "drivers/network/arp.h"
 #include "drivers/mouse/mouse.h"
+#include "drivers/block/floppy.h"
 #include "terminal_backend_vga.h"
+#include "drivers/serial/serial.h"
 #include "drivers/audio/speakers.h"
 #include "drivers/network/rtl8139.h"
 #include "thingamabob/thingamabob.h"
@@ -33,6 +41,14 @@ void timer(Registers* regs)
     printf(".");
 }
 
+void user_test()
+{
+    while (1)
+    {
+        printf("[USER] Hello from userland!\n");
+    }
+}
+
 void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t* fb_info, BootParams* boot)
 {
     memset(&__bss_start, 0, (&__end) - (&__bss_start));
@@ -41,15 +57,19 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     cmos_read_rtc(&rtc);
 
     HAL_Initialize();
+    //paging_init();
     syscall_initialize();
-    fb_init(fb_info);
+    //fb_init(fb_info);
     memdetect_init(boot->Memory.Regions, boot->Memory.RegionCount);
     ramfs_init();
 
     clrscr();
     text_clear();
+    scheduler_init();
     pci_scan();
     memdetect_print();
+    serial_init();
+    usb_init();
     rtl8139_init(0, 3);
     sb16_init();
     text_print("[{0x08}SPEAKERS{0x0F}]    Testing sound...\n");
@@ -68,6 +88,7 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     if (!thingamabob_is_initialized())
     {
         text_print("{0x04}WHERE THE FUCK IS MY DOODAD?!!?!!?!, RETC=06");
+        text_clear();
         panic_now_silent("NOOOOOO, WHERE THE DOODAD?!?!?!!!!?!?!!!");
     }
 
@@ -79,21 +100,23 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     text_print("[{0x08}ATA{0x0F}]         First byte: ");
     text_print_hex8(sector[0]);
     text_print("\n");
-    dataset_init();
+    zdsfs_init();
     ahci_init(ahci_dev.bus, ahci_dev.slot, ahci_dev.func);
+    atapi_detect();
+    floppy_init();
     text_print("[{0x08}FB{0x0F}]          addr=");
     text_print_hex((uint32_t)fb_info->addr);
 
-    text_print("\n              width=");
+    text_print("\n[{0x08}FB{0x0F}]          width=");
     text_print_dec(fb_info->width);
 
-    text_print("\n              height=");
+    text_print("\n[{0x08}FB{0x0F}]          height=");
     text_print_dec(fb_info->height);
 
-    text_print("\n              pitch=");
+    text_print("\n[{0x08}FB{0x0F}]          pitch=");
     text_print_dec(fb_info->pitch);
 
-    text_print("\n              bpp=");
+    text_print("\n[{0x08}FB{0x0F}]          bpp=");
     text_print_dec(fb_info->bpp);
 
     text_print("\n");
@@ -110,7 +133,19 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     text_print_dec(rtc.year);
     text_print("\n");
     datetime_prompt();
+
+    process_t* kernel_proc = create_process();
+    add_process(kernel_proc);
+
+    process_t* test = create_process();
+    add_process(test);
+
+    test->regs.eip = (uint32_t)user_test;
+    test->regs.esp = 0x90000;
+
+    play_mac_chime();
     text_clear();
+
 
     text_print("{0x01}ZZZZZZZZZZZZZZ IIIIII LL            OOOOOO   \n");
     text_print("{0x01}ZZ          ZZ   II   LL          OO      OO \n");
@@ -130,7 +165,7 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
     text_print("{0x0F}ZILO/SYS version 1.6b\n");
     text_print("{0x0F}READY.\n");
     text_print("> ");
-    fb_clear(0x0000FF);
+    //fb_clear(0x0000FF);
     //fb_rect(10, 10, 10, 10, 0x12);
     //i686_IRQ_RegisterHandler(0, timer);
 
@@ -146,6 +181,7 @@ void __attribute__((section(".entry"))) start(uint16_t bootDrive, framebuffer_t*
 end:
     for (;;)
     {
+        schedule();
         if (mouse_updated)
         {
             mouse_updated = 0;

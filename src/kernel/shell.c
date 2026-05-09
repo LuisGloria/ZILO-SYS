@@ -7,12 +7,13 @@
 #include "power.h"
 #include "arch/i686/pci.h"
 #include "drivers/block/ata.h"
+#include "drivers/block/atapi.h"
 #include "drivers/audio/sb16.h"
 #include "drivers/audio/speakers.h"
-#include "fs/dataset.h"
+#include "fs/zdsfs.h"
 #include "bin/zedit.h"
 #include "bin/datetime.h"
-#include "bin/dsview.h"
+//#include "bin/dsview.h"
 
 static const char* skip_spaces(const char* s)
 {
@@ -119,7 +120,7 @@ retc_t shell_execute(const char* cmdline)
     }
     else if (strcmp(cmd, "sb16test") == 0)
     {
-        play_tetris_theme();
+        play_aria_math();
         return RETC_OK;
     }
     else if (strcmp(cmd, "cat") == 0)
@@ -137,6 +138,11 @@ retc_t shell_execute(const char* cmdline)
         buf[r] = 0;
 
         text_print(buf);
+        return RETC_OK;
+    }
+    else if (strcmp(cmd, "cdpresent") == 0)
+    {
+        atapi_detect();
         return RETC_OK;
     }
     else if (strcmp(cmd, "calc") == 0)
@@ -219,8 +225,7 @@ retc_t shell_execute(const char* cmdline)
     }
     else if (strcmp(cmd, "crash") == 0)
     {
-        panic_now("Manual crash triggered from shell");
-        return RETC_OK; // unreachable
+        panic_now("");
     }
     else if (strcmp(cmd, "clear") == 0)
     {
@@ -229,13 +234,16 @@ retc_t shell_execute(const char* cmdline)
     }
     else if (strcmp(cmd, "createdset") == 0)
     {
-        if (*args)
+        const char* name = get_arg1(cmdline);
+
+        if (!*name)
         {
-            dataset_create(args, 10); // 10 sectors for now
-            return RETC_OK;
+            text_print("Usage: createdset <name>\n");
+            return RETC_WRONG_ARG;
         }
 
-        return RETC_WRONG_ARG;
+        zdsfs_create(name);
+        return RETC_OK;
     }
     else if (strcmp(cmd, "hewwo") == 0)
     {
@@ -284,17 +292,18 @@ retc_t shell_execute(const char* cmdline)
     {
         if (*args)
         {
-            dataset_delete(args);
+            zdsfs_delete(args);
             return RETC_OK;
         }
 
+        text_print("Usage: deldset <name>\n");
         return RETC_WRONG_ARG;
     }
-    else if (strcmp(cmd, "dsview") == 0)
-    {
-        dsviewer_run();
-        return RETC_OK;
-    }
+    //else if (strcmp(cmd, "dsview") == 0)
+    //{
+    //    dsviewer_run();
+    //    return RETC_OK;
+    //}
     else if (strcmp(cmd, "indie") == 0)
     {
         text_print("{0x0D}              ==:=                      \n");
@@ -326,7 +335,7 @@ retc_t shell_execute(const char* cmdline)
     }
     else if (strcmp(cmd, "listdset") == 0)
     {
-        dataset_list();
+        zdsfs_list();
         return RETC_OK;
     }
     else if (strcmp(cmd, "listpci") == 0)

@@ -1,18 +1,14 @@
 #include "zedit.h"
 #include "../text.h"
 #include "../string.h"
-#include "../fs/dataset.h"
+#include "../fs/zdsfs.h"
 #include "../arch/i686/keyboard.h"
 
-
-//ts broken
 #define MAX_BUF 4096
 
 static char buffer[MAX_BUF];
-
 static void zedit_readline(char* out, int max)
 {
-    // it works, trust (not)
     char* line = keyboard_get_line();
 
     if (!line)
@@ -25,39 +21,75 @@ static void zedit_readline(char* out, int max)
     out[max - 1] = 0;
 }
 
+static int zedit_read_number()
+{
+    char buf[8];
+
+    while (1)
+    {
+        zedit_readline(buf, sizeof(buf));
+
+        if (buf[0] != 0)
+            break;
+    }
+
+    int n = 0;
+
+    for (int i = 0; buf[i]; i++)
+    {
+        if (buf[i] >= '0' && buf[i] <= '9')
+            n = n * 10 + (buf[i] - '0');
+    }
+
+    return n;
+}
+
 int zedit_run(const char* unused)
 {
-    char dset[16];
-    char fname[16];
+    (void)unused;
 
-    text_print("Available datasets:\n");
-    dataset_list();
+    text_print("\n=== ZEDIT (ZDSFS EDITOR) ===\n\n");
+    text_print("Datasets:\n");
 
-    text_print("\nSelect dataset: ");
-    zedit_readline(dset, sizeof(dset));
+    int count = zdsfs_count();
 
-    text_print("\nFile name: ");
-    zedit_readline(fname, sizeof(fname));
-
-    text_print("\nDEBUG dataset = ");
-    text_print(dset);
-    text_print("\n");
-
-    text_print("DEBUG file = ");
-    text_print(fname);
-    text_print("\n");
-
-    if (dset_read_file(dset, fname, (uint8_t*)buffer) < 0)
+    for (int i = 0; i < count; i++)
     {
-        text_print("File not found\n");
+        zdsfs_dscb_t* d = zdsfs_get(i);
+
+        if (!d) continue;
+
+        text_print_dec(i);
+        text_print(": ");
+        text_print(d->name);
+        text_print("\n");
+    }
+
+    text_print("\nSelect dataset number: ");
+    int idx = zedit_read_number();
+
+    dataset_t* selected = zdsfs_get(idx);
+
+    if (!selected)
+    {
+        text_print("Invalid selection\n");
         return -1;
     }
 
-    text_print("\n=== ZEDIT ===\n");
-    text_print(buffer);
+    text_print("\nSelected: ");
+    text_print(selected->name);
     text_print("\n");
 
-    text_print("Editing not implemented yet :3\n");
+    if (zdsfs_read(selected->name, (uint8_t*)buffer) < 0)
+    {
+        text_print("Failed to read dataset\n");
+        return -1;
+    }
+
+    text_print("\n=== CONTENT ===\n");
+    text_print(buffer);
+    text_print("\n");
+    text_print("\nEditing not implemented yet :3\n");
 
     return 0;
 }

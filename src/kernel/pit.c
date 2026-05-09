@@ -7,9 +7,12 @@
 
 static volatile uint32_t ticks = 0;
 
+extern void schedule();
+
 void pit_handler(Registers* regs)
 {
     ticks++;
+    schedule();
 }
 
 uint32_t pit_get_ticks()

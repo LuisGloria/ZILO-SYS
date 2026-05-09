@@ -8,5 +8,3 @@ typedef enum {
 } zedit_state_t;
 
 int zedit_run(const char* filename);
-
-void zedit_tick(void);

@@ -4,6 +4,11 @@
 #include "../../text.h"
 #include "../../drivers/block/ahci.h"
 
+#include "../../drivers/usb/uhci.h"
+#include "../../drivers/usb/ehci.h"
+#include "../../drivers/usb/xhci.h"
+#include "../../drivers/usb/ohci.h"
+
 #define PCI_CONFIG_ADDRESS 0xCF8
 #define PCI_CONFIG_DATA    0xCFC
 
@@ -95,9 +100,8 @@ void pci_scan()
                 // RTL8139
                 if (vendor == 0x10EC && device == 0x8139)
                 {
-                    printf("[{0x08}PCI{0x0F}]         RTL8139 FOUND at %d:%d:%d\n", bus, slot, func);
+                    printf("[{0x08}{0x0F}]         RTL8139 FOUND at %d:%d:%d\n", bus, slot, func);
                 }
-
                 // AHCI SATA
                 if (class == 0x01 && subclass == 0x06 && prog_if == 0x01)
                 {
@@ -113,7 +117,6 @@ void pci_scan()
                         ahci_init(bus, slot, func);
                     }
                 }
-
                 if (class == 0x03 && !gpu_found)
                 {
                     gpu_dev.bus = bus;
@@ -121,6 +124,25 @@ void pci_scan()
                     gpu_dev.func = func;
                     gpu_dev.subclass = subclass;
                     gpu_found = 1;
+                }
+                if (class == 0x0C && subclass == 0x03)
+                {
+                    text_print("[{0x08}PCI{0x0F}]         USB controller found: ");
+
+                    if (prog_if == 0x00){
+                        text_print("UHCI\n");
+                        uhci_init(bus, slot, func);
+                    } else if (prog_if == 0x10) {
+                        text_print("OHCI\n");
+                        ohci_init(bus, slot, func);
+                    } else if (prog_if == 0x20) {
+                        text_print("EHCI\n");
+                        ehci_init(bus, slot, func);
+                    } else if (prog_if == 0x30) {
+                        text_print("xHCI\n");
+                        xhci_init(bus, slot, func);
+                    } else
+                        text_print("Unknown USB controller\n");
                 }
             }
         }

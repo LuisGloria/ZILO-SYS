@@ -16,4 +16,6 @@ qemu-system-i386 \
     -machine pcspk-audiodev=speaker \
     -device sb16,audiodev=speaker \
     -serial stdio \
-    -vga std
+    -vga std \
+    -device usb-ehci \
+    -device floppy

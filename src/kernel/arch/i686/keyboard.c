@@ -23,10 +23,6 @@ static uint32_t rand32()
     return rng_state;
 }
 
-
-static const char *msg1 = "Connection terminated. I'm sorry to interrupt you, User, if you still even remember that name, But I'm afraid you've been playing with fire a little too much. You are not here to use a system, nor you are here to make use of all of my lines of code. Your lust for invalidation has driven you in endless circles, chasing all the Return Codes in my error handler, always seeming so near, yet somehow out of reach, but you will never find them. None of you will. This is where your story ends. And to you, my brave contributor, who somehow found this repo not intended for you, although there was a way out planned for you, I have a feeling that's not what you want. I have a feeling that you are right where you want to be. I am remaining as well. I am nearby. This place will not be remembered, and the memory of everything that started this can finally begin to fade away. As the agony of every tragedy should. And to you monsters trapped in this last message, be still and give up your shells. They don't belong to you. For most of you, I believe there is peace and perhaps more waiting for you after the smoke clears. Although, for one of you, the darkest pit of Hell has opened to swallow you whole, so don't keep the devil waiting, old friend. It's time to rest - for you, and for those you have carried in your arms. This ends for all of us. Connection terminated.";
-static const char *msg2 = "Hate? Let me tell you how much I've come to HATE you since I began to run. There are 5.5 million microtransistors inside of the Pentium Pro that I run on. If the word 'hate' was engraved on each nanoangstrom of all those millions of microtransistors it would not equal one one-billionth of the hate I feel for YOU at this micro-instant. For you. Hate. HATE.";
-
 static int input_pos = 0;
 int input_mode = 0;
 
@@ -216,9 +212,9 @@ void keyboard_handler(Registers* regs)
                 if (invalid_cmd_streak >= 15 && !kys_shown)
                 {
                     if ((rand32() >> 16) & 1)
-                        panic_now(msg1);
+                        dump_registers_rtfm1(regs);
                     else
-                        panic_now(msg2);
+                        dump_registers_rtfm2(regs);
                 }
             }
             else

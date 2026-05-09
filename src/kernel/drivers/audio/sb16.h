@@ -3,5 +3,7 @@
 
 int sb16_init();
 void sb16_test_tone();
-void play_tetris_theme();
+void play_aria_math();
+void play_mac_chime();
+void play_kernel_panic_chime();
 void sb16_play(uint8_t* buf, uint32_t len, uint16_t hz);

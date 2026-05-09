@@ -2,8 +2,11 @@
 #include "stdio.h"
 #include "time.h"
 
-#define SYSCALL_PRINT   1
+#define SYSCALL_EXIT    0
+#define SYSCALL_WRITE   1
 #define SYSCALL_TIME    2
+#define SYSCALL_EXEC    3
+#define SYSCALL_PRINT   5
 
 static void syscall_handler(Registers* regs)
 {
