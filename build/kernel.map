@@ -1,8 +1,8 @@
 Archive member included to satisfy reference by file (symbol)
 
-/usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+/opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
                               /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj (__udivdi3)
-/usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+/opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
                               /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj (__umoddi3)
 
 There are no discarded input sections
@@ -61,7 +61,6 @@ LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
-LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/understand.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sound.obj
@@ -88,7 +87,7 @@ LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zio.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
 LOAD /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
-LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
+LOAD /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x00100000                        phys = 0x100000
                 0x00100000                        . = phys
 
@@ -555,7 +554,6 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x00108935                i686_PIC_Unmask
                 0x0010898b                i686_PIC_ReadIrqRequestRegister
                 0x001089e3                i686_PIC_ReadInServiceRegister
- .text          0x00108a3b        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/understand.obj
  .text          0x00108a3b       0xe4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
                 0x00108a3b                dma_init
                 0x00108a41                dma_set_channel_1
@@ -645,10 +643,10 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x0010b63a                zstrlen
  .text          0x0010b662        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
  *fill*         0x0010b662        0xe 
- .text          0x0010b670      0x11a /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .text          0x0010b670      0x11a /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
                 0x0010b670                __udivdi3
  *fill*         0x0010b78a        0x6 
- .text          0x0010b790      0x136 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+ .text          0x0010b790      0x136 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
                 0x0010b790                __umoddi3
 
 .data           0x0010b8e0      0x90c
@@ -705,7 +703,6 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
  .data          0x0010c144        0x4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
  .data          0x0010c148        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
  .data          0x0010c148        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
- .data          0x0010c148        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/understand.obj
  .data          0x0010c148        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
  *fill*         0x0010c148       0x18 
  .data          0x0010c160       0x7c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
@@ -734,8 +731,8 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
  .data          0x0010c1ec        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
  .data          0x0010c1ec        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
  .data          0x0010c1ec        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
- .data          0x0010c1ec        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .data          0x0010c1ec        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+ .data          0x0010c1ec        0x0 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .data          0x0010c1ec        0x0 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
 .rodata         0x0010c200     0x3ad0
                 0x0010c200                        __rodata_start = .
@@ -808,8 +805,8 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
  .rodata        0x0010fb1c      0x1b4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/xhci.obj
 
 .eh_frame       0x0010fcd0       0xd8
- .eh_frame      0x0010fcd0       0x64 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .eh_frame      0x0010fd34       0x74 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+ .eh_frame      0x0010fcd0       0x64 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .eh_frame      0x0010fd34       0x74 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
 .bss            0x00110000   0x111020
                 0x00110000                        __bss_start = .
@@ -879,7 +876,6 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
                 0x0021af5c                PIC_ICW1
                 0x0021af60                PIC_ICW4
                 0x0021af64                PIC_CMD
- .bss           0x0021af68        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/understand.obj
  .bss           0x0021af68        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
  *fill*         0x0021af68       0x18 
  .bss           0x0021af80     0x1000 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
@@ -911,12 +907,12 @@ LOAD /usr/lib/gcc/i686-elf/15.2.0/libgcc.a
  .bss           0x00221020        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
  .bss           0x00221020        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
  .bss           0x00221020        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
- .bss           0x00221020        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .bss           0x00221020        0x0 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+ .bss           0x00221020        0x0 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .bss           0x00221020        0x0 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
                 0x00221020                        __end = .
 OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
 
-.debug_info     0x00000000     0xab99
+.debug_info     0x00000000     0xb21a
  .debug_info    0x00000000      0x225 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
  .debug_info    0x00000225       0x94 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/font.obj
  .debug_info    0x000002b9       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
@@ -985,8 +981,10 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
  .debug_info    0x0000a8c3      0x15d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
  .debug_info    0x0000aa20      0x122 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
  .debug_info    0x0000ab42       0x57 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
+ .debug_info    0x0000ab99      0x331 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .debug_info    0x0000aeca      0x350 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.debug_abbrev   0x00000000     0x4bdf
+.debug_abbrev   0x00000000     0x4ea9
  .debug_abbrev  0x00000000      0x14b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
  .debug_abbrev  0x0000014b       0x4b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/font.obj
  .debug_abbrev  0x00000196       0xa3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
@@ -1055,8 +1053,10 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
  .debug_abbrev  0x00004a20       0xca /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
  .debug_abbrev  0x00004aea       0xcf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
  .debug_abbrev  0x00004bb9       0x26 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
+ .debug_abbrev  0x00004bdf      0x15a /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x00004d39      0x170 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.debug_aranges  0x00000000      0x878
+.debug_aranges  0x00000000      0x8b8
  .debug_aranges
                 0x00000000       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
  .debug_aranges
@@ -1193,8 +1193,12 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
                 0x00000840       0x20 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
  .debug_aranges
                 0x00000860       0x18 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
+ .debug_aranges
+                0x00000878       0x20 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x00000898       0x20 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.debug_line     0x00000000     0x5250
+.debug_line     0x00000000     0x559b
  .debug_line    0x00000000      0x188 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
  .debug_line    0x00000188       0x36 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/font.obj
  .debug_line    0x000001be       0x6b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
@@ -1237,7 +1241,6 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
  .debug_line    0x00003229      0x313 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
  .debug_line    0x0000353c      0x221 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
  .debug_line    0x0000375d      0x10f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
- .debug_line    0x0000386c        0x0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/understand.obj
  .debug_line    0x0000386c       0x83 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
  .debug_line    0x000038ef      0x458 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
  .debug_line    0x00003d47       0x5e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sound.obj
@@ -1264,8 +1267,10 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
  .debug_line    0x000050b8       0xa3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
  .debug_line    0x0000515b       0xc0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
  .debug_line    0x0000521b       0x35 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
+ .debug_line    0x00005250      0x17b /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .debug_line    0x000053cb      0x1d0 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.debug_str      0x00000000     0x7ffc
+.debug_str      0x00000000     0x83ab
  .debug_str     0x00000000      0x1ac /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
  .debug_str     0x000001ac       0xd9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/font.obj
  .debug_str     0x00000285       0xfb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
@@ -1308,176 +1313,179 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
  .debug_str     0x00005474      0x4be /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
  .debug_str     0x00005932      0x249 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
  .debug_str     0x00005b7b      0x2d3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
- .debug_str     0x00005e4e       0x4b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/understand.obj
- .debug_str     0x00005e99      0x12f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
- .debug_str     0x00005fc8      0x294 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
- .debug_str     0x0000625c      0x10f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sound.obj
- .debug_str     0x0000636b      0x13a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/speakers.obj
- .debug_str     0x000064a5      0x12c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ahci.obj
- .debug_str     0x000065d1      0x187 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
- .debug_str     0x00006758      0x117 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/atapi.obj
- .debug_str     0x0000686f      0x113 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/floppy.obj
- .debug_str     0x00006982      0x1e4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/mouse/mouse.obj
- .debug_str     0x00006b66      0x1cb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
- .debug_str     0x00006d31      0x127 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
- .debug_str     0x00006e58      0x1c9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
- .debug_str     0x00007021      0x136 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/serial/serial.obj
- .debug_str     0x00007157      0x1a4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ehci.obj
- .debug_str     0x000072fb      0x177 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ohci.obj
- .debug_str     0x00007472      0x1a5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/uhci.obj
- .debug_str     0x00007617       0xe8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/usb.obj
- .debug_str     0x000076ff      0x1de /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/xhci.obj
- .debug_str     0x000078dd      0x13c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
- .debug_str     0x00007a19      0x112 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
- .debug_str     0x00007b2b       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zalloc.obj
- .debug_str     0x00007bf7       0xca /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zctype.obj
- .debug_str     0x00007cc1      0x102 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zio.obj
- .debug_str     0x00007dc3       0xc1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
- .debug_str     0x00007e84       0xce /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
- .debug_str     0x00007f52       0xaa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
+ .debug_str     0x00005e4e      0x12f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
+ .debug_str     0x00005f7d      0x294 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
+ .debug_str     0x00006211      0x10f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sound.obj
+ .debug_str     0x00006320      0x13a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/speakers.obj
+ .debug_str     0x0000645a      0x12c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ahci.obj
+ .debug_str     0x00006586      0x187 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .debug_str     0x0000670d      0x117 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/atapi.obj
+ .debug_str     0x00006824      0x113 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/floppy.obj
+ .debug_str     0x00006937      0x1e4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/mouse/mouse.obj
+ .debug_str     0x00006b1b      0x1cb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .debug_str     0x00006ce6      0x127 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .debug_str     0x00006e0d      0x1c9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .debug_str     0x00006fd6      0x136 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/serial/serial.obj
+ .debug_str     0x0000710c      0x1a4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ehci.obj
+ .debug_str     0x000072b0      0x177 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ohci.obj
+ .debug_str     0x00007427      0x1a5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/uhci.obj
+ .debug_str     0x000075cc       0xe8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/usb.obj
+ .debug_str     0x000076b4      0x1de /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/xhci.obj
+ .debug_str     0x00007892      0x13c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .debug_str     0x000079ce      0x112 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
+ .debug_str     0x00007ae0       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zalloc.obj
+ .debug_str     0x00007bac       0xca /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zctype.obj
+ .debug_str     0x00007c76      0x102 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zio.obj
+ .debug_str     0x00007d78       0xc1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
+ .debug_str     0x00007e39       0xce /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
+ .debug_str     0x00007f07       0xaa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
+ .debug_str     0x00007fb1      0x1fd /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .debug_str     0x000081ae      0x1fd /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
 .debug_line_str
-                0x00000000     0x3b31
+                0x00000000     0x3fc0
  .debug_line_str
-                0x00000000       0xbd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
+                0x00000000       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
  .debug_line_str
-                0x000000bd       0x75 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/font.obj
+                0x000000cc       0x75 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/font.obj
  .debug_line_str
-                0x00000132       0xb0 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
+                0x00000141       0xbf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
  .debug_line_str
-                0x000001e2      0x272 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
+                0x00000200      0x281 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
  .debug_line_str
-                0x00000454       0x7c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/math.obj
+                0x00000481       0x7c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/math.obj
  .debug_line_str
-                0x000004d0       0xe3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memdetect.obj
+                0x000004fd       0xf2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memdetect.obj
  .debug_line_str
-                0x000005b3       0xad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
+                0x000005ef       0xbc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory.obj
  .debug_line_str
-                0x00000660       0xdb /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
+                0x000006ab       0xea /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/panic.obj
  .debug_line_str
-                0x0000073b       0xbf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
+                0x00000795       0xce /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/pit.obj
  .debug_line_str
-                0x000007fa       0xb9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/power.obj
+                0x00000863       0xc8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/power.obj
  .debug_line_str
-                0x000008b3      0x14e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
+                0x0000092b      0x15d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/shell.obj
  .debug_line_str
-                0x00000a01       0xc2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
+                0x00000a88       0xd1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/stdio.obj
  .debug_line_str
-                0x00000ac3       0xa9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
+                0x00000b59       0xb8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/string.obj
  .debug_line_str
-                0x00000b6c       0xcf /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/syscall.obj
+                0x00000c11       0xde /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/syscall.obj
  .debug_line_str
-                0x00000c3b       0xd7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
+                0x00000cef       0xe6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal_backend_vga.obj
  .debug_line_str
-                0x00000d12       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
+                0x00000dd5      0x104 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
  .debug_line_str
-                0x00000e07       0xad /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
+                0x00000ed9       0xbc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/time.obj
  .debug_line_str
-                0x00000eb4       0xa4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
+                0x00000f95       0xb3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vga.obj
  .debug_line_str
-                0x00000f58       0xf7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/bin/datetime.obj
+                0x00001048      0x106 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/bin/datetime.obj
  .debug_line_str
-                0x0000104f      0x100 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/bin/zedit.obj
+                0x0000114e      0x10f /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/bin/zedit.obj
  .debug_line_str
-                0x0000114f       0xfa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/fs/zdsfs.obj
+                0x0000125d      0x109 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/fs/zdsfs.obj
  .debug_line_str
-                0x00001249       0xed /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
+                0x00001366       0xfc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/hal/hal.obj
  .debug_line_str
-                0x00001336       0xe5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory/paging.obj
+                0x00001462       0xf4 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/memory/paging.obj
  .debug_line_str
-                0x0000141b      0x11b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/process/process.obj
+                0x00001556      0x12a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/process/process.obj
  .debug_line_str
-                0x00001536      0x14d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/scheduler/scheduler.obj
+                0x00001680      0x15c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/scheduler/scheduler.obj
  .debug_line_str
-                0x00001683       0xb8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/thingamabob/thingamabob.obj
+                0x000017dc       0xb8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/thingamabob/thingamabob.obj
  .debug_line_str
-                0x0000173b       0xe3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
+                0x00001894       0xf2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/ramfs.obj
  .debug_line_str
-                0x0000181e       0xb9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
+                0x00001986       0xc8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/vfs/vfs.obj
  .debug_line_str
-                0x000018d7       0xb2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/ast.obj
+                0x00001a4e       0xb2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/ast.obj
  .debug_line_str
-                0x00001989       0xab /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/codegen.obj
+                0x00001b00       0xab /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/codegen.obj
  .debug_line_str
-                0x00001a34       0xc1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/lexer.obj
+                0x00001bab       0xc1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/lexer.obj
  .debug_line_str
-                0x00001af5       0xa8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/main.obj
+                0x00001c6c       0xa8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/main.obj
  .debug_line_str
-                0x00001b9d       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/parser.obj
+                0x00001d14       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/parser.obj
  .debug_line_str
-                0x00001c57       0xb8 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
+                0x00001dce       0xc7 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/gdt.obj
  .debug_line_str
-                0x00001d0f       0xbe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
+                0x00001e95       0xcd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/idt.obj
  .debug_line_str
-                0x00001dcd       0xba /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
+                0x00001f62       0xc9 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/io.obj
  .debug_line_str
-                0x00001e87       0xf5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
+                0x0000202b      0x104 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/irq.obj
  .debug_line_str
-                0x00001f7c       0xd3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
+                0x0000212f       0xe2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isr.obj
  .debug_line_str
-                0x0000204f       0xcd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
+                0x00002211       0xdc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/isrs_gen.obj
  .debug_line_str
-                0x0000211c      0x111 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
+                0x000022ed      0x120 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
  .debug_line_str
-                0x0000222d      0x141 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
+                0x0000240d      0x150 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
  .debug_line_str
-                0x0000236e       0xbd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
+                0x0000255d       0xcc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
  .debug_line_str
-                0x0000242b       0x47 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/understand.obj
+                0x00002629       0xf2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
  .debug_line_str
-                0x00002472       0xe3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
+                0x0000271b      0x116 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
  .debug_line_str
-                0x00002555      0x107 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
+                0x00002831       0xdc /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sound.obj
  .debug_line_str
-                0x0000265c       0xcd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sound.obj
+                0x0000290d      0x101 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/speakers.obj
  .debug_line_str
-                0x00002729       0xf2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/speakers.obj
+                0x00002a0e      0x111 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ahci.obj
  .debug_line_str
-                0x0000281b      0x102 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ahci.obj
+                0x00002b1f      0x10d /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
  .debug_line_str
-                0x0000291d       0xfe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+                0x00002c2c      0x113 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/atapi.obj
  .debug_line_str
-                0x00002a1b      0x104 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/atapi.obj
+                0x00002d3f      0x116 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/floppy.obj
  .debug_line_str
-                0x00002b1f      0x107 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/floppy.obj
+                0x00002e55      0x132 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/mouse/mouse.obj
  .debug_line_str
-                0x00002c26      0x123 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/mouse/mouse.obj
+                0x00002f87      0x10e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
  .debug_line_str
-                0x00002d49       0xff /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+                0x00003095       0xe5 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
  .debug_line_str
-                0x00002e48       0xd6 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+                0x0000317a      0x127 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
  .debug_line_str
-                0x00002f1e      0x118 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+                0x000032a1      0x11a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/serial/serial.obj
  .debug_line_str
-                0x00003036      0x10b /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/serial/serial.obj
+                0x000033bb      0x109 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ehci.obj
  .debug_line_str
-                0x00003141       0xfa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ehci.obj
+                0x000034c4      0x109 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ohci.obj
  .debug_line_str
-                0x0000323b       0xfa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ohci.obj
+                0x000035cd      0x10e /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/uhci.obj
  .debug_line_str
-                0x00003335       0xff /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/uhci.obj
+                0x000036db       0xa3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/usb.obj
  .debug_line_str
-                0x00003434       0xa3 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/usb.obj
+                0x0000377e      0x109 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/xhci.obj
  .debug_line_str
-                0x000034d7       0xfa /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/xhci.obj
+                0x00003887       0xd1 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
  .debug_line_str
-                0x000035d1       0xc2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+                0x00003958       0xec /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
  .debug_line_str
-                0x00003693       0xdd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
+                0x00003a44       0xa2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zalloc.obj
  .debug_line_str
-                0x00003770       0xa2 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zalloc.obj
+                0x00003ae6       0x99 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zctype.obj
  .debug_line_str
-                0x00003812       0x99 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zctype.obj
+                0x00003b7f       0xcd /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zio.obj
  .debug_line_str
-                0x000038ab       0xbe /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zio.obj
+                0x00003c4c       0x9c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
  .debug_line_str
-                0x00003969       0x9c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
+                0x00003ce8       0x9c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
  .debug_line_str
-                0x00003a05       0x9c /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
+                0x00003d84       0x90 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
  .debug_line_str
-                0x00003aa1       0x90 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
+                0x00003e14       0xd6 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .debug_line_str
+                0x00003eea       0xd6 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
-.comment        0x00000000      0x545
+.comment        0x00000000      0x532
  .comment       0x00000000       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
  .comment       0x00000013       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/font.obj
  .comment       0x00000026       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/heap.obj
@@ -1520,35 +1528,34 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
  .comment       0x000002e5       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/keyboard.obj
  .comment       0x000002f8       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pci.obj
  .comment       0x0000030b       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/pic.obj
- .comment       0x0000031e       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/arch/i686/understand.obj
- .comment       0x00000331       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
- .comment       0x00000344       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
- .comment       0x00000357       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sound.obj
- .comment       0x0000036a       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/speakers.obj
- .comment       0x0000037d       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ahci.obj
- .comment       0x00000390       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
- .comment       0x000003a3       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/atapi.obj
- .comment       0x000003b6       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/floppy.obj
- .comment       0x000003c9       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/mouse/mouse.obj
- .comment       0x000003dc       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
- .comment       0x000003ef       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
- .comment       0x00000402       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
- .comment       0x00000415       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/serial/serial.obj
- .comment       0x00000428       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ehci.obj
- .comment       0x0000043b       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ohci.obj
- .comment       0x0000044e       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/uhci.obj
- .comment       0x00000461       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/usb.obj
- .comment       0x00000474       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/xhci.obj
- .comment       0x00000487       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
- .comment       0x0000049a       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
- .comment       0x000004ad       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zalloc.obj
- .comment       0x000004c0       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zctype.obj
- .comment       0x000004d3       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zio.obj
- .comment       0x000004e6       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
- .comment       0x000004f9       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
- .comment       0x0000050c       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
- .comment       0x0000051f       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
- .comment       0x00000532       0x13 /usr/lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+ .comment       0x0000031e       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/dma.obj
+ .comment       0x00000331       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sb16.obj
+ .comment       0x00000344       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/sound.obj
+ .comment       0x00000357       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/audio/speakers.obj
+ .comment       0x0000036a       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ahci.obj
+ .comment       0x0000037d       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/ata.obj
+ .comment       0x00000390       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/atapi.obj
+ .comment       0x000003a3       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/block/floppy.obj
+ .comment       0x000003b6       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/mouse/mouse.obj
+ .comment       0x000003c9       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp.obj
+ .comment       0x000003dc       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/arp_cache.obj
+ .comment       0x000003ef       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/network/rtl8139.obj
+ .comment       0x00000402       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/serial/serial.obj
+ .comment       0x00000415       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ehci.obj
+ .comment       0x00000428       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/ohci.obj
+ .comment       0x0000043b       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/uhci.obj
+ .comment       0x0000044e       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/usb.obj
+ .comment       0x00000461       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/usb/xhci.obj
+ .comment       0x00000474       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb.obj
+ .comment       0x00000487       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/video/fb_terminal.obj
+ .comment       0x0000049a       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zalloc.obj
+ .comment       0x000004ad       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zctype.obj
+ .comment       0x000004c0       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zio.obj
+ .comment       0x000004d3       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zmem.obj
+ .comment       0x000004e6       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
+ .comment       0x000004f9       0x13 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/ztypes.obj
+ .comment       0x0000050c       0x13 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .comment       0x0000051f       0x13 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
 
 .debug_frame    0x00000000     0x24e0
  .debug_frame   0x00000000       0x94 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/cmos.obj
@@ -1619,10 +1626,21 @@ OUTPUT(/home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel.bin binary)
  .debug_frame   0x0000246c       0x74 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/zilolang/zlibs/zstr.obj
 
 .debug_rnglists
-                0x00000000       0x48
+                0x00000000       0x91
  .debug_rnglists
                 0x00000000       0x1a /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/main.obj
  .debug_rnglists
                 0x0000001a       0x17 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/terminal.obj
  .debug_rnglists
                 0x00000031       0x17 /home/lsys/Scripts/ZILO-SYS/ZILO-SYS/build/kernel/c/drivers/mouse/mouse.obj
+ .debug_rnglists
+                0x00000048       0x2a /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .debug_rnglists
+                0x00000072       0x1f /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
+
+.debug_loclists
+                0x00000000      0x940
+ .debug_loclists
+                0x00000000      0x4de /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_udivdi3.o)
+ .debug_loclists
+                0x000004de      0x462 /opt/i686-elf-tools/bin/../lib/gcc/i686-elf/15.2.0/libgcc.a(_umoddi3.o)
